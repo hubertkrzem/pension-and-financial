@@ -9,7 +9,7 @@ export default function Article() {
           What Is Pension Auto-Enrolment (AE)?
         </h2>
         <p className="mt-4 text-slate-600 text-left">
-          The Irish Government’s Auto-Enrolment (AE) pension scheme will launch in January 2026. 
+          The Irish Government&apos;s Auto-Enrolment (AE) pension scheme will launch in January 2026. 
           It aims to increase retirement savings by automatically enrolling eligible employees into a workplace pension scheme—unless they choose to opt out.
         </p>
 
@@ -86,7 +86,7 @@ export default function Article() {
         </div>
 
         <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-          Support Your Employees' Financial Future
+          Support Your Employees&apos; Financial Future
         </h2>
         <p className="mt-4 text-slate-600 text-left">Offering a Company Pension shows your commitment to your team’s long-term wellbeing. Give your employees access to:</p>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-600 text-left marker:text-brand-teal">
@@ -105,7 +105,7 @@ export default function Article() {
           </Link>
         </p>
         <p>
-        <Link href="AE-summary.pdf" className="font-semibold text-brand-teal hover:underline">
+          <Link href="AE-summary.pdf" className="font-semibold text-brand-teal hover:underline">
             Auto-Enrolment Key Highlights for Employers and Employees →
           </Link>
         </p>
