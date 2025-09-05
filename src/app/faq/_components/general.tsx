@@ -39,7 +39,7 @@ const items: Item[] = [
           Your journey with us typically includes:
         </p>
         <div>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
+          <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
             <li>An initial consultation (no obligation)</li>
             <li>Discovery and goal-setting meeting</li>
             <li>Analysis of your current financial position</li>
