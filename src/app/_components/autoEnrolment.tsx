@@ -15,7 +15,7 @@ export default function AutoEnrollment() {
         </p>
 
         <p className="mt-6">
-          <Link href="#" className="font-semibold text-brand-teal hover:underline">
+          <Link href="/autoEnrolment" className="font-semibold text-brand-teal hover:underline">
             Learn more about what auto-enrolment means for you →
           </Link>
         </p>
