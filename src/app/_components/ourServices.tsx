@@ -2,17 +2,13 @@ import Link from "next/link";
 
 export default function OurServices() {
   return (
-    <section className="bg-gray-50 py-14 sm:py-16">
+    <section className="bg-white py-14 sm:py-16">
       <div className="mx-auto max-w-5xl px-4">
         {/* Heading + subheading */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Our Services
+            Our Core Services
           </h2>
-          <p className="mt-3 text-slate-500">
-            We specialise in tailored financial planning services that are regulated by the Central Bank of
-            Ireland and delivered with clarity, confidentiality, and care.
-          </p>
         </div>
 
         {/* Cards */}
@@ -29,7 +25,15 @@ export default function OurServices() {
             <ul className="mt-4 space-y-3 text-slate-600">
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
-                <span>Corporate Pension Schemes and Auto-Enrolment Readiness</span>
+                <span>Corporate Pension Schemes</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
+                <span>Auto Enrolment Compliance</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
+                <span>Employee Benefits</span>
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
@@ -38,10 +42,6 @@ export default function OurServices() {
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
                 <span>Company Investment Planning and Financial Governance</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
-                <span>Employee Financial Wellbeing and Retention Strategies</span>
               </li>
             </ul>
 
@@ -65,19 +65,23 @@ export default function OurServices() {
             <ul className="mt-4 space-y-3 text-slate-600">
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
-                <span>Investment Portfolio Reviews</span>
+                <span>Wealth Management and Strategic Financial Planning</span>
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
-                <span>Risk Assessment &amp; Management</span>
+                <span>Tax-Efficient Investment Advice and Portfolio Construction</span>
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
-                <span>Tax-Efficient Investing</span>
+                <span>Personal Pension, PRSAs, Executive Pensions</span>
               </li>
               <li className="flex gap-3">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
-                <span>Regular Savings Plans</span>
+                <span>Estate &amp; Inheritance Tax Planning</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-teal shrink-0" />
+                <span>Life Assurance, Income Protection for Family Security</span>
               </li>
             </ul>
 
@@ -96,7 +100,7 @@ export default function OurServices() {
 
 /* ==== Inline SVG Icons (no deps) ==== */
 
-function ShieldIcon({ className = "h-8 w-8 text-sky-500" }) {
+function ShieldIcon({ className = "h-8 w-8 text-brand-teal" }) {
   return (
     <svg
       className={className}
@@ -110,7 +114,7 @@ function ShieldIcon({ className = "h-8 w-8 text-sky-500" }) {
   );
 }
 
-function TrendIcon({ className = "h-8 w-8 text-sky-500" }) {
+function TrendIcon({ className = "h-8 w-8 text-brand-teal" }) {
   return (
     <svg
       className={className}

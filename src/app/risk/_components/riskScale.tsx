@@ -11,13 +11,13 @@ type RiskItem = {
 };
 
 const DATA: RiskItem[] = [
-  { level: 1, name: "Very low risk", blurb: "Minimal fluctuations. Capital protection is key.", profile: "Very cautious investors prioritising stability." },
-  { level: 2, name: "Low risk", blurb: "Minimal fluctuations. Capital protection is key.", profile: "Cautious investors seeking stability." },
-  { level: 3, name: "Low–medium risk", blurb: "Small fluctuations, focus on preservation with some growth.", profile: "Conservative investors willing to accept limited risk." },
-  { level: 4, name: "Medium risk", blurb: "Balanced risk/return with moderate volatility.", profile: "Balanced investors seeking steady growth." },
-  { level: 5, name: "Medium–high risk", blurb: "Higher volatility with increased growth potential.", profile: "Growth investors comfortable with drawdowns." },
-  { level: 6, name: "High risk", blurb: "Significant fluctuations. Long-term horizon recommended.", profile: "Aggressive investors seeking higher returns." },
-  { level: 7, name: "Very high risk", blurb: "Large swings likely. Only for experienced investors.", profile: "Very aggressive investors with strong risk tolerance." },
+  { level: 1, name: "Very Low Risk", blurb: "Minimal fluctuations. Capital protection is key.", profile: "Cautious investors seeking stability." },
+  { level: 2, name: "Low Risk", blurb: "Slight value changes. Focus on steady returns.", profile: "Conservative investors with low tolerance for loss." },
+  { level: 3, name: "Low to Moderate Risk", blurb: "Some volatility. Balanced approach.", profile: "Investors open to modest growth with limited risk." },
+  { level: 4, name: "Moderate Risk", blurb: "Noticeable ups and downs. Potential for growth.", profile: "Balanced investors seeking growth with some risk." },
+  { level: 5, name: "Moderate to High Risk", blurb: "Higher volatility. Greater return potential.", profile: "Growth-focused investors comfortable with risk." },
+  { level: 6, name: "High Risk", blurb: "Significant fluctuations. High return potential.", profile: "Experienced investors with strong risk tolerance." },
+  { level: 7, name: "Very High Risk", blurb: "Very volatile. Returns can vary widely.", profile: "Speculative investors aiming for maximum growth." },
 ];
 
 // nice gradient-ish colour steps for the selector circles
@@ -39,7 +39,11 @@ export default function RiskScale() {
     setSelected(idx);
     const el = cardRefs.current[idx];
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: top - 70, // Offset to handle sticky navbar
+        behavior: "smooth",
+      });
     }
   };
 
@@ -135,6 +139,16 @@ export default function RiskScale() {
               </div>
             );
           })}
+        </div>
+
+        {/* Notices */}
+        <div className="text-slate-600 pt-12 text-center">
+          <ul className="list-disc space-y-1 pl-5 marker:text-brand-teal inline-block text-left">
+            <li>The value of your investment may go down as well as up.</li>
+            <li>You may get back less than you invest.</li>
+            <li>Past performance is not a reliable guide to future performance.</li>
+            <li>Investments may be affected by changes in currency exchange rates.</li>
+          </ul>
         </div>
       </div>
     </section>

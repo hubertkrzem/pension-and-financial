@@ -1,6 +1,7 @@
 
 import Mission from "@/app/about/_components/mission";
 import TeamSection from "@/app/about/_components/teamSection"
+import WhyChooseUs from "@/app/about/_components/whyChooseUs"
 import Contact from "@/components/contact";
 import Hero from "@/components/hero";
 
@@ -16,6 +17,7 @@ export default function About() {
           />
       <Mission/>
       <TeamSection/>
+      <WhyChooseUs/>
       <Contact/>
     </>
   );

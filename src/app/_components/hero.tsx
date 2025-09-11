@@ -11,23 +11,13 @@ export default function Hero() {
     <div className="absolute inset-0 bg-black/50"></div>
 
     <div className="
-        absolute left-[40%] top-[20%] md:left-[50%] md:top-[20%] lg:left-[50%] lg:top-[25%]
+        absolute left-[40%] top-[50%] md:left-[50%] md:top-[20%] lg:left-[50%] lg:top-[33%]
         max-w-[min(70ch,100vw)] rounded-2xl bg-white/30 backdrop-blur p-6 shadow-xl text-white"
     >
-
         <h1 className="text-3xl md:text-5xl font-semibold">
             Welcome to<br></br>
             Pension & Financial
         </h1>
-        
-        <p className="mt-3">
-            At Pension & Financial, we are proud to offer expert, 
-            independent financial advice and personalised service to both corporate clients and high-net-worth individuals across Ireland.
-        </p>
-        <p className="mt-3">
-            Founded in 1992, our firm is built on trust, professionalism, and a commitment to long-term client success.
-        </p>
-
     </div>
 </section>
   );

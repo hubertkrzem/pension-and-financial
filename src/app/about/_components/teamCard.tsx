@@ -21,7 +21,7 @@ export default function TeamCard({ member }: { member: TeamMember }) {
         <h3 className="mt-4 text-xl font-bold leading-tight text-slate-900">
           {member.name}
         </h3>
-        <p className="text-sky-600 font-medium">{member.role}</p>
+        <p className="text-brand-teal font-medium">{member.role}</p>
 
         <div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-600">
           {member.bio.map((p, i) => (

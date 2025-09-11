@@ -7,7 +7,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);        // mobile main menu
   const [submenuOpen, setSubmenuOpen] = useState(false);  // mobile services submenu
 
-  // NEW: Desktop Services dropdown state + refs/handlers
+  // Desktop Services dropdown state + refs/handlers
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLLIElement>(null);
 
@@ -31,7 +31,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="relative z-20 bg-white shadow-sm border-b border-slate-200">
+    <nav className="sticky top-0 z-20 bg-white shadow-sm border-b border-slate-200 ">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between text-center">
           {/* Logo */}

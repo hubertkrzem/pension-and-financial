@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --brand-teal: #00A9E0;
+  --brand-teal: #1165BE;
   --brand-navy: #10069F;
 }
 
@@ -14,7 +14,7 @@
   --font-mono: var(--font-geist-mono);
 
   --color-brand-navy: #10069f;
-  --color-brand-teal: #00a9e0;
+  --color-brand-teal: #1165BE;
 }
 
 @media (prefers-color-scheme: dark) {
