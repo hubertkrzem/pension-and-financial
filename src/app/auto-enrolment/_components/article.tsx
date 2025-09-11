@@ -61,16 +61,9 @@ export default function Article() {
           <li>Enhanced employee retention</li>
         </ul>
 
-        <p className="mt-4 text-left text-slate-600">If your business experiences high staff turnover, AE may be a practical starting point.</p>
-        <p className="text-left text-slate-600">In either case, you’ll need to:</p>
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-left text-slate-600 marker:text-brand-teal">
-          <li>Prepare you payroll system for AE contributions</li>
-          <li>Budget for increasing employer contributions over time</li>
-        </ul>
-
         <div className="max-w-3xl mx-auto">
           <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-            Company Pension vs Auto-Enrolment - At a Glance
+            Comparison Chart AE vs Company Scheme
           </h2>
           
           <Image
@@ -100,13 +93,13 @@ export default function Article() {
         </h2>
         <div className="text-left">
         <p className="mt-4">
-          <Link href="AE-detailed-presentation.pdf" className="font-semibold text-brand-teal hover:underline">
-            Auto-Enrolment detailed presentation →
+          <Link href="AE-summary.pdf" className="font-semibold text-brand-teal hover:underline">
+            Auto-Enrolment Key Highlights for Employers and Employees →
           </Link>
         </p>
         <p>
-          <Link href="AE-summary.pdf" className="font-semibold text-brand-teal hover:underline">
-            Auto-Enrolment Key Highlights for Employers and Employees →
+          <Link href="AE-detailed-presentation.pdf" className="font-semibold text-brand-teal hover:underline">
+            Auto-Enrolment detailed presentation →
           </Link>
         </p>
         </div>
