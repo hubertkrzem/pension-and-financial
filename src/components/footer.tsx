@@ -47,7 +47,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#" className="block py-2 hover:text-blue-700">
+              <Link href="/legal" className="block py-2 hover:text-blue-700">
                 Legal Disclaimers
               </Link>
             </li>
