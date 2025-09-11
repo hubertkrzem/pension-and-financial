@@ -9,26 +9,63 @@ type Item = {
 
 const items: Item[] = [
   {
+    title: "Shareholder & Director Benefits",
+    body: (
+      <div className="space-y-4 text-slate-600 marker:text-brand-teal">
+        <p>
+          There are a range of tailored solutions available to protect company owners and key decision-makers to provide both personal financial security and business continuity including:
+        </p>
+        <div>
+          <ul className="mt-2 list-disc space-y-1 pl-5">
+            <li>Executive Pensions – structured retirement plans designed for company directors.</li>
+            <li>Key Person (Keyman) Insurance – financial protection for the business if a key director or employee becomes seriously ill or dies.</li>
+            <li>Directors’ Insurance – cover that helps protect directors and their families in the event of illness or death.</li>
+            <li>Shareholder Protection – ensures remaining shareholders can retain control of the business if a shareholder passes away.</li>
+          </ul>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Company Employee Benefits",
+    body: (
+      <div className="space-y-4 text-slate-600 marker:text-brand-teal">
+        <p>
+          Employee Benefits are company backed pension and insurance plans that support staff both
+          now and in the future. They help attract and retain talent giving employees financial security
+          and show a company’s commitment to its people.
+        </p>
+      </div>
+    ),
+  },
+  {
     title: "Company Pension Schemes",
     body: (
       <div className="space-y-4 text-slate-600 marker:text-brand-teal">
         <p>
-          Guidance on selecting and running the right pension structure for your business,
-          with clear communication for employees and ongoing governance support.
+          A <span className="font-bold text-brand-teal">Company Pension Scheme</span> is one of the most valuable employee benefits a business can
+          offer. These schemes help your team save for retirement, while also offering tax efficiencies
+          and long-term planning advantages for your company.
+        </p>
+        <p>
+          We support employers in setting up and managing compliant pension arrangements, including
+          preparation for Ireland’s upcoming auto-enrolment system, commencing January 2026.
         </p>
         <div>
           <p className="font-semibold text-brand-teal">Key Features:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>Auto-enrolment readiness & compliance</li>
-            <li>Scheme design and provider selection</li>
-            <li>Employer & employee contribution strategies</li>
+            <li>Regular employer contributions</li>
+            <li>Employee contributions qualify for income tax relief</li>
+            <li>Investment options to match different employee risk profiles</li>
+            <li>Compliant with Revenue rules and future auto-enrolment</li>
           </ul>
         </div>
         <div>
-          <p className="font-semibold text-brand-teal">Benefits:</p>
+          <p className="font-semibold text-brand-teal">Benefits for your business:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>Improved retention & employee wellbeing</li>
-            <li>Clear fiduciary oversight for directors</li>
+            <li>Attract and retain high-quality staff</li>
+            <li>Demonstrate a long-term commitment to employee wellbeing</li>
+            <li>Position your business as a responsible and forward-thinking employer</li>
           </ul>
         </div>
       </div>
@@ -39,22 +76,25 @@ const items: Item[] = [
     body: (
       <div className="space-y-4 text-slate-600 marker:text-brand-teal">
         <p>
-          We help businesses manage surplus cash efficiently with tailored,
-          professional investment strategies aligned to company goals and risk tolerance.
+          Our <span className="font-bold text-brand-teal">Company Investment Planning</span> service focuses on helping businesses manage
+          company funds more efficiently. Whether preparing for future growth, capital spending, or
+          improving cash flow yield, we provide professional investment guidance tailored to your
+          financial goals.
         </p>
         <div>
           <p className="font-semibold text-brand-teal">Key Features:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>Low–medium risk options & liquidity focus</li>
+            <li>Low–medium risk investment options</li>
             <li>Professionally managed fund access</li>
-            <li>Governance & reporting for stakeholders</li>
+            <li>Tailored strategies to match your company’s goals</li>
           </ul>
         </div>
         <div>
           <p className="font-semibold text-brand-teal">Benefits:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>Enhanced returns on idle capital</li>
-            <li>Improved cash-flow strength & flexibility</li>
+            <li>Enhanced return on idle capital</li>
+            <li>Improved liquidity and long-term financial strength</li>
+            <li>Demonstrates financial governance to stakeholders</li>
           </ul>
         </div>
       </div>
@@ -65,15 +105,23 @@ const items: Item[] = [
     body: (
       <div className="space-y-4 text-slate-600 marker:text-brand-teal">
         <p>
-          Cost-effective protection for your team with group life, income protection, and
-          specified illness benefits designed for SMEs and larger employers.
+          We provide <span className="font-bold text-brand-teal">Group Risk Benefits</span> that support employee wellbeing and protect against life’s
+          unexpected challenges.
         </p>
         <div>
-          <p className="font-semibold text-brand-teal">Key Features:</p>
+          <p className="font-semibold text-brand-teal">Types of Cover:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>Life, Illness & Income Protection</li>
-            <li>Flexible eligibility & cover levels</li>
-            <li>Claims support & annual reviews</li>
+            <li>Group Life Cover (death-in-service) lump sum on death</li>
+            <li>Group Income Protection, replace income during illness</li>
+            <li>Group Specified Illness Cover, lump sum payable on medical event</li>
+          </ul>
+        </div>
+        <div>
+          <p className="font-semibold text-brand-teal">Benefits:</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5">
+            <li>Financial security for employees and their families</li>
+            <li>Enhanced staff loyalty and retention</li>
+            <li>Easy-to-administer and cost-effective solutions</li>
           </ul>
         </div>
       </div>

@@ -13,10 +13,10 @@ const items: Item[] = [
     body: (
       
       <div className="space-y-4 text-slate-600 marker:text-brand-teal">
-        <p>
+        {/* <p>
           Guidance on selecting and running the right pension structure for your business,
           with clear communication for employees and ongoing governance support.
-        </p>
+        </p> */}
         <div>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>Personalised financial strategies based on your goals and risk appetite</li>
@@ -40,19 +40,19 @@ const items: Item[] = [
     body: (
       <div className="space-y-4 text-slate-600">
         <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
+          <li>Generate a strong return on your savings</li>
           <li>Access to a wide selection of asset classes and fund managers</li>
           <li>Tax-efficient structures suitable for lump sums or regular contributions</li>
-          <li>Flexible options based on income, growth, or diversification needs</li>
         </ul>
       </div>
     ),
   },
   {
-    title: "Investment Policies",
+    title: "Pension Investments",
     body: (
       <div className="space-y-4 text-slate-600">
         <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
-          <li>Advice on PRSAs, Executive Pensions, and ARFs</li>
+          <li>Advice on PRSAs, Executive &amp; Personal Pensions</li>
           <li>Maximising tax relief on pension contributions</li>
           <li>Planning for post-retirement income and drawdown strategies</li>
         </ul>
@@ -60,23 +60,23 @@ const items: Item[] = [
     ),
   },
   {
-    title: "Section 72 Inheritance Tax Planning",
+    title: "Section 72 Inheritance Tax Planning Life Insurance policy",
     body: (
       <div className="space-y-4 text-slate-600">
         <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
           <li>Revenue-approved life insurance policy</li>
-          <li>Used to cover inheritance tax bills on death</li>
+          <li>Used to cover inheritance (CAT) tax bills on death</li>
           <li>Helps preserve estate value and ease the transfer of assets</li>
         </ul>
       </div>
     ),
   },
   {
-    title: "Section 73 Policies",
+    title: "Section 73 Policies Savings Policy",
     body: (
       <div className="space-y-4 text-slate-600">
         <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
-          <li>Investment policies designed to offset Capital Acquisitions Tax (CAT) on lifetime gifts</li>
+          <li>Saving policies designed to offset Capital Acquisitions Tax (CAT)</li>
           <li>Commonly used by parents or grandparents gifting assets</li>
           <li>Conditions include minimum policy term and Revenue requirements</li>
         </ul>
