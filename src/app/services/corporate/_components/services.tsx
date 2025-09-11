@@ -49,7 +49,7 @@ const items: Item[] = [
         </p>
         <p>
           We support employers in setting up and managing compliant pension arrangements, including
-          preparation for Ireland’s upcoming auto-enrolment system, commencing January 2026.
+          preparation for Ireland’s upcoming <span className="font-bold text-brand-teal">auto-enrolment</span> system, commencing January 2026.
         </p>
         <div>
           <p className="font-semibold text-brand-teal">Key Features:</p>

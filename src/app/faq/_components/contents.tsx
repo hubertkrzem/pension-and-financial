@@ -1,6 +1,6 @@
 export default function Questions() {
     return(
-    <section className="bg-gray-50 py-14 sm:py-16">
+    <section className="bg-white py-14 sm:py-16">
         <div className="mx-auto max-w-3xl px-4">
             <div className="text-center">
                 <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">

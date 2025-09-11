@@ -1,6 +1,6 @@
 export default function Mission() {
   return (
-    <section className="bg-white py-14 sm:py-16">
+    <section className="bg-gray-50 py-14 sm:py-16">
       <div className=" mx-auto max-w-6xl px-4">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">Our Mission</h2>

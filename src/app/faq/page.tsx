@@ -1,24 +1,23 @@
 import Contact from "@/components/contact";
-import Questions from "@/app/faq/_components/contents";
-import Pensions from "@/app/faq/_components/pensions";
-import Investments from "@/app/faq/_components/investment-policies";
-import General from "@/app/faq/_components/general";
+import Questions from "./_components/contents";
+import Pensions from "./_components/pensions";
+import Investments from "./_components/investment-policies";
+import General from "./_components/general";
 import Hero from "@/components/hero"
 
-import Companies from "@/app/faq/_components/companies";
-import Individuals from "@/app/faq/_components/individuals";
-import General2 from "@/app/faq/_components/general2";
+import Companies from "./_components/companies";
+import Individuals from "./_components/individuals";
+import General2 from "./_components/general2";
+import Intro from "./_components/intro";
+import Text from "./_components/text"
 
 export default function Faq() {
   return (
     <>
     <Hero
-        title="Frequently Asked Questions (FAQ)"
-        subtitle={[
-            "At Pension & Financial, we understand that financial planning can be complex. Our aim is to provide clarity and confidence when it comes to protecting your business, your people, and your wealth.",
-            "Below are answers to some of the most common questions we receive from both corporate and personal clients."
-        ]}
+        title="Frequently Asked Questions"
     />
+    <Intro/>
     <Questions/>
     <Pensions/>
     <Investments/>
@@ -28,12 +27,14 @@ export default function Faq() {
     <Individuals/>
     <General2/>
 
-    <Contact
-        title="Need More Help?"
-        subtitle="If you have any questions about pensions, investment planning,
-                    or inheritance tax solutions, please contact us directly.
-                    We are here to provide clear, professional guidance you can trust."
+    <Text
+      title="Need More Help?"
+      subtitle={[
+        "If you have any questions about pensions, investment planning, or inheritance tax solutions, please contact us directly. We are here to provide clear, professional guidance you can trust.",
+        "We aim to make the process simple, transparent, and entirely focused on your success."
+      ]}
     />
+    <Contact/>
     </>
   );
 }

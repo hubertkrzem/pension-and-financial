@@ -3,7 +3,7 @@ export default function Hero() {
     <section
         className="relative min-h-[70vh] overflow-hidden"
         style={{
-            backgroundImage: "url(/shop-clock-right.jpg)",
+            backgroundImage: "url(/shop-front.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "50% 50%"
         }}

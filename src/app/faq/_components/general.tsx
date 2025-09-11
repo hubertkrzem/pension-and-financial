@@ -59,7 +59,7 @@ export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="general" className="bg-white py-12 sm:py-16">
+    <section id="general" className="bg-gray-50 py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">
           General Questions

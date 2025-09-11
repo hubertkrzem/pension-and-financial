@@ -6,7 +6,7 @@ import { TEAM } from "@/app/about/data/team";
 
 export default function TeamSection() {
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900">
           Meet our team

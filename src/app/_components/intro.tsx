@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function AutoEnrollment() {
   return (
     <section className="bg-gray-50 py-14 sm:py-16">
-      <div className="mx-auto max-w-3xl px-4 text-center text-slate-600">
+      <div className="mx-auto max-w-3xl px-4 text-left text-slate-600">
         <p>
           At Pension &amp; Financial, we are proud to offer expert, independent financial advice and
           personalised service to both corporate clients and high-net-worth individuals across Ireland.

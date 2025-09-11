@@ -12,8 +12,8 @@ export default function Corporate() {
       <Text
         title="Professional Financial Planning for Irish Businesses"
         subtitle={[
-          "We offer trusted, strategic support to companies across Ireland. Our tailored services help employers manage their obligations, grow financial assets, and offer valuable employee benefits through pensions and protection.",
-          "Our goal is to deliver professional, impartial advice that strengthens your business, supports your team, and builds long-term financial stability, leading to strong staff retention."
+          <>We offer <span className="font-bold text-brand-teal">trusted</span>, strategic support to companies across Ireland. Our tailored services help employers manage their obligations, grow financial assets, and offer valuable <span className="font-bold text-brand-teal">employee benefits</span> through pensions and protection.</>,
+          <>Our goal is to deliver <span className="font-bold text-brand-teal">professional</span>, <span className="font-bold text-brand-teal">impartial</span> advice that strengthens your business, supports your team, and builds long-term financial stability, leading to strong staff retention.</>
         ]}
       />
       <Services/>

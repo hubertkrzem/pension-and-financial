@@ -47,13 +47,10 @@ export const TEAM: TeamMember[] = [
     role: "Financial Advisor in training",
     // Add imageSrc back in
     imageAlt: "Portrait of Michael Clare",
-    bio: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada condimentum commodo.",
-      "Proin a augue nec augue tristique tristique. In hac habitasse platea dictumst."
-    ],
+    bio: [],
     badges: [
         "BSc Accounting & Finance",
-        "Specialist investment advisor SIA"
+        "Specialist investment advisory SIA"
     ]
   }
 ];

@@ -13,15 +13,16 @@ const items: Item[] = [
     body: (
       <div className="space-y-4 text-slate-600">
         <p>
-          A pension is a long-term savings plan designed to help you build up income for your retirement.
-          Contributions are typically made on a regular basis and benefit from tax relief, while investment
-          growth within the pension is not subject to income tax or capital gains tax.
+          A pension is a long-term savings plan designed to help you build up income for your
+          retirement. Contributions are typically made on a regular basis and benefit from tax relief,
+          while investment growth within the pension is not subject to income tax or capital gains tax.
         </p>
         <div>
           <p className="font-semibold text-brand-teal">Benefits of pensions include:</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>Tax relief on contributions (subject to Revenue limits)</li>
             <li>Tax-free growth of funds within the pension</li>
+            <li>Option to take a tax-free lump sum at retirement (subject to limits)</li>
             <li>Long-term financial security in retirement</li>
           </ul>
         </div>
@@ -40,8 +41,8 @@ const items: Item[] = [
             <li>Personal Retirement Savings Accounts (PRSAs)</li>
             <li>Executive Pension Plans</li>
             <li>Occupational Pension Schemes</li>
-            <li>Buy-Out Bonds</li>
-            <li>Approved Retirement Funds (ARFs)</li>
+            <li>Buy-Out Bonds (PRB)</li>
+            <li>Approved Retirement Funds (ARF)</li>
             <li>Auto-enrolment guidance for employers</li>
           </ul>
         </div>
@@ -99,7 +100,7 @@ export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="pensions" className="bg-white py-12 sm:py-16">
+    <section id="pensions" className="bg-gray-50 py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">
           Pensions
