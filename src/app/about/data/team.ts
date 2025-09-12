@@ -32,7 +32,8 @@ export const TEAM: TeamMember[] = [
     // Add imageSrc back in
     imageAlt: "Portrait of Yvette Fidgeon",
     bio: [
-      "Brings strong business acumen, joins John in 2024",
+      "Yvette is a Qualified Financial Advisor, joining John in 2024, she brings over 25 years of experience in business leadership.",
+      "She combines deep financial expertise with a practical, client-focused approach to help achieve long-term financial wellbeing."
     ],
     badges: [
       "Qualified financial advisory QFA",
