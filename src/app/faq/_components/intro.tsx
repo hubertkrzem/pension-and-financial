@@ -2,7 +2,7 @@ export default function Intro() {
     return(
     <section className="bg-gray-50 py-14 sm:py-16">
         <div className="mx-auto max-w-3xl px-4 text-left">
-            <div className="space-y-2 text-slate-600">
+            <div className="space-y-5 text-slate-600 text-xl">
                 <p>
                     At Pension &amp; Financial, we understand that financial planning can be complex. Our aim is to
                     provide clarity and confidence when it comes to protecting your business, your people and your wealth.

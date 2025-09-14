@@ -3,11 +3,11 @@ import Questions from "./_components/contents";
 import Pensions from "./_components/pensions";
 import Investments from "./_components/investment-policies";
 import General from "./_components/general";
-import Hero from "@/components/hero"
+import Hero from "@/components/hero";
 
 import Companies from "./_components/companies";
 import Individuals from "./_components/individuals";
-import General2 from "./_components/general2";
+import Section7273 from "./_components/section7273";
 import Intro from "./_components/intro";
 import Text from "./_components/text"
 
@@ -15,17 +15,17 @@ export default function Faq() {
   return (
     <>
     <Hero
-        title="Frequently Asked Questions"
+        title={["Frequently Asked Questions"]}
     />
     <Intro/>
     <Questions/>
     <Pensions/>
     <Investments/>
+    <Section7273/>
     <General/>
 
     <Companies/>
     <Individuals/>
-    <General2/>
 
     <Text
       title="Need More Help?"

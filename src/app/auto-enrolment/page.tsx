@@ -6,7 +6,7 @@ export default function AutoEnrollment() {
   return (
     <>
     <Hero
-        title="Auto-Enrolment Employer Summary"
+        title={["Auto-Enrolment Employer Summary"]}
     />
     <Article/>
     <Contact/>

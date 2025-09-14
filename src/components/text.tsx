@@ -1,14 +1,16 @@
 type Props = {
   title?: string;
   subtitle?: React.ReactNode[];
+  className?: string;
 };
 
 export default function Contact({
     title = "Title",
-    subtitle = ["Subtitle"]
+    subtitle = ["Subtitle"],
+    className = "bg-white"
 }: Props) {
     return(
-    <section className="bg-white py-14 sm:py-16">
+    <section className={`py-14 sm:py-16 ${className}`}>
         <div className="mx-auto max-w-3xl px-4 text-center">
             <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
             {title}

@@ -25,8 +25,9 @@ const items: Item[] = [
     body: (
       <div className="space-y-4 text-slate-600">
         <p>
-          Yes. We are independent financial brokers and offer impartial advice across a wide range of providers and products.
-          This means we tailor our recommendations to your unique financial circumstances and goals — not to any single provider.
+          Yes. We are regulated financial brokers and offer impartial advice across a wide range of
+          providers and products. This means we tailor our recommendations to your unique financial
+          circumstances and goals, not tied to any single provider.
         </p>
       </div>
     ),
@@ -47,9 +48,6 @@ const items: Item[] = [
             <li>Ongoing support and regular reviews</li>
           </ul>
         </div>
-        <p>
-          We aim to make the process simple, transparent, and entirely focused on your success.
-        </p>
       </div>
     ),
   }
@@ -59,7 +57,7 @@ export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="general" className="bg-gray-50 py-12 sm:py-16">
+    <section id="general" className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">
           General Questions

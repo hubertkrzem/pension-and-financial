@@ -1,10 +1,12 @@
+import Link from "next/link"
+
 export default function Mission() {
   return (
     <section className="bg-gray-50 py-14 sm:py-16">
-      <div className=" mx-auto max-w-6xl px-4">
+      <div className=" mx-auto max-w-6xl px-4 text-slate-600">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">Our Mission</h2>
-          <p className="mt-3 text-slate-500">
+          <p className="mt-3">
             John’s guiding vision has remained consistent since day one:
           </p>
         </div>
@@ -33,15 +35,23 @@ export default function Mission() {
         </div>
 
         {/* Attribution */}
-        <p className="mt-8 text-center text-sm font-medium text-slate-700">
+        <p className="mt-8 text-center text-sm font-medium">
           — John Clare, Director
         </p>
 
         {/* Closing line */}
-        <p className="mt-8 text-center text-slate-500 max-w-3xl mx-auto">
+        <p className="mt-8 text-center max-w-3xl mx-auto">
           Let us help you plan for a stronger financial future — with advice you can trust and
           service you can depend on.
         </p>
+
+
+        <p className="mx-auto max-w-3xl text-center mt-4 text-center">
+            Whether you are an <Link className="underline font-semibold text-brand-teal" href="/services/personal">Individual</Link> preparing for a secure retirement,
+            a <Link className="underline text-brand-teal font-semibold" href="/services/corporate">Business owner</Link> enhancing
+            employee benefits, or a <Link className="underline text-brand-teal font-semibold" href="/services/personal">Family</Link> safeguarding generational wealth, we are here to deliver
+            bespoke financial solutions you can trust.
+          </p>
       </div>
     </section>
   );

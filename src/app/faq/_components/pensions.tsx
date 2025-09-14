@@ -19,7 +19,7 @@ const items: Item[] = [
         </p>
         <div>
           <p className="font-semibold text-brand-teal">Benefits of pensions include:</p>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
+          <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
             <li>Tax relief on contributions (subject to Revenue limits)</li>
             <li>Tax-free growth of funds within the pension</li>
             <li>Option to take a tax-free lump sum at retirement (subject to limits)</li>
@@ -37,7 +37,7 @@ const items: Item[] = [
           We provide advice on a wide range of personal and company pension arrangements, including:
         </p>
         <div>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
+          <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
             <li>Personal Retirement Savings Accounts (PRSAs)</li>
             <li>Executive Pension Plans</li>
             <li>Occupational Pension Schemes</li>
@@ -58,7 +58,7 @@ const items: Item[] = [
           subject to Revenue limits based on your age and earnings. For example:
         </p>
         <div>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
+          <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
             <li>Under 30 years: 15% of earnings (max. €115,000)</li>
             <li>30–39 years: 20%</li>
             <li>40–49 years: 25%</li>
@@ -81,7 +81,7 @@ const items: Item[] = [
           Depending on the type of pension, you may:
         </p>
         <div>
-          <ul className="mt-2 list-disc space-y-1 pl-5">
+          <ul className="mt-2 list-disc space-y-1 pl-5 marker:text-brand-teal">
             <li>Leave the pension invested where it is</li>
             <li>Transfer it into a new employer’s scheme</li>
             <li>Move it to a Buy-Out Bond or PRSA</li>

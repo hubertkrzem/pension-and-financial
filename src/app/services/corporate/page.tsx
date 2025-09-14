@@ -1,13 +1,13 @@
 import Services from "@/app/services/corporate/_components/services";
 import Contact from "@/components/contact";
-import Hero from "@/components/hero"
+import Hero from "@/components/hero";
 import Text from "@/components/text"
 
 export default function Corporate() {
   return (
     <>
       <Hero
-        title="Company Financial Services"
+        title={["Company Financial Services"]}
       />
       <Text
         title="Professional Financial Planning for Irish Businesses"

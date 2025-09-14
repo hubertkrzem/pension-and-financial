@@ -1,13 +1,13 @@
 import Services from "@/app/services/personal/_components/services";
 import Contact from "@/components/contact";
-import Hero from "@/components/hero"
+import Hero from "./_components/hero";
 import Text from "@/components/text"
 
 export default function Personal() {
   return (
     <>
     <Hero
-      title="Personal Wealth Management & Financial Planning"
+      title={["Personal Wealth Management & Financial Planning"]}
     />
     <Text
       title="Tailored Wealth Solutions for High Net Worth Clients"
