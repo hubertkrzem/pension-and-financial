@@ -8,16 +8,18 @@ import Hero from "@/components/hero";
 import Companies from "./_components/companies";
 import Individuals from "./_components/individuals";
 import Section7273 from "./_components/section7273";
-import Intro from "./_components/intro";
-import Text from "./_components/text"
+import Intro from "@/components/intro";
+import Text from "@/components/text"
 
 export default function Faq() {
   return (
     <>
-    <Hero
-        title={["Frequently Asked Questions"]}
+    <Hero/>
+    <Intro
+      title="Frequently Asked Questions"
+      subtitle={["At Pension & Financial, we understand that financial planning can be complex. Our aim is toprovide clarity and confidence when it comes to protecting your business, your people and your wealth.", "If you have a specific question not answered below, please feel free to contact us directly."]}
+      className="bg-gray-50"
     />
-    <Intro/>
     <Questions/>
     <Pensions/>
     <Investments/>

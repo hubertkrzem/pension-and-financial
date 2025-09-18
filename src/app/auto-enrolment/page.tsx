@@ -5,9 +5,7 @@ import Article from "./_components/article";
 export default function AutoEnrollment() {
   return (
     <>
-    <Hero
-        title={["Auto-Enrolment Employer Summary"]}
-    />
+    <Hero/>
     <Article/>
     <Contact/>
     </>
