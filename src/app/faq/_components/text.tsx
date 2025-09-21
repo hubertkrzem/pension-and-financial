@@ -3,7 +3,7 @@ type Props = {
   subtitle?: React.ReactNode[];
 };
 
-export default function Contact({
+export default function Text({
     title = "Title",
     subtitle = ["Subtitle"]
 }: Props) {

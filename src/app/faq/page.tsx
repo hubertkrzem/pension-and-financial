@@ -35,6 +35,7 @@ export default function Faq() {
         "If you have any questions about pensions, investment planning, or inheritance tax solutions, please contact us directly. We are here to provide clear, professional guidance you can trust.",
         "We aim to make the process simple, transparent, and entirely focused on your success."
       ]}
+      className="bg-gray-50"
     />
     <Contact/>
     </>
