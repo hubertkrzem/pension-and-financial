@@ -5,6 +5,7 @@ export default function Article() {
   return (
     <section className="bg-gray-50 py-14 sm:py-16">
       <div className="mx-auto max-w-3xl px-4 text-center">
+        {/*
         <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           What Is Pension Auto-Enrolment (AE)?
         </h2>
@@ -12,8 +13,9 @@ export default function Article() {
           The Irish Government&apos;s Auto-Enrolment (AE) pension scheme will launch in January 2026. 
           It aims to increase retirement savings by automatically enrolling eligible employees into a workplace pension scheme—unless they choose to opt out.
         </p>
+        */}
 
-        <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+        <h2 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           Who Will Be Auto-Enrolled?
         </h2>
         <p className="mt-4 text-slate-600 text-left">

@@ -4,7 +4,7 @@ type Props = {
   className?: string;
 };
 
-export default function Contact({
+export default function Text({
     title = "Title",
     subtitle = ["Subtitle"],
     className = "bg-white"

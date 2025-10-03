@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function AutoEnrollment() {
+export default function Intro() {
   return (
     <section className="bg-gray-50 py-14 sm:py-16">
       <div className="mx-auto max-w-3xl px-4 text-left text-slate-600">
