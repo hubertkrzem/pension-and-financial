@@ -39,7 +39,7 @@ export default function Home({
 
             <div className="pt-2">
               {subtitle.map((line, index) => (
-                    <p key={index}>{line}</p>
+                    <p className="mt-4" key={index}>{line}</p>
               ))}
             </div>
           </div>
