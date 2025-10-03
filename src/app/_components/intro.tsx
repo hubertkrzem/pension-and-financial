@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Intro() {
   return (
     <section className="bg-gray-50 py-14 sm:py-16">

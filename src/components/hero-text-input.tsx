@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 type Props = {
-  title?: React.ReactElement;
+  title?: React.ReactNode;
   subtitle?: React.ReactNode[];
   className?: string;
 };
 
 
 export default function Home({
-    title = <h1>"Title"</h1>,
+    title = "Title",
     subtitle = ["Subtitle"],
     className="bg-gray-50",
 }: Props) {
@@ -34,14 +34,12 @@ export default function Home({
           {/* RIGHT: Text section */}
           <div className="lg:col-span-6 text-slate-600 md:text-left mx-auto max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-black sm:text-4xl">
-              {title}
+              <h1>{title}</h1>
             </h1>
 
             <div className="pt-2">
               {subtitle.map((line, index) => (
-                <p className="mt-4" key={index}>
-                  {line}
-                </p>
+                    <p key={index}>{line}</p>
               ))}
             </div>
           </div>
