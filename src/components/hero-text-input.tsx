@@ -13,7 +13,7 @@ export default function Home({
     className="bg-gray-50",
 }: Props) {
   return (
-    <section className={`bg-gray-50 py-14 sm:py-16" ${className}`}>
+    <section className={`bg-gray-50 py-14 sm:py-16 ${className}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
@@ -39,7 +39,9 @@ export default function Home({
 
             <div className="pt-2">
               {subtitle.map((line, index) => (
-                    <p className="mt-4" key={index}>{line}</p>
+                <p className="mt-4" key={index}>
+                  {line}
+                </p>
               ))}
             </div>
           </div>
