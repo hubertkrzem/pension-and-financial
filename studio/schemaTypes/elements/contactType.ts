@@ -2,7 +2,7 @@ import {defineType, defineField} from 'sanity'
 
 export const contactType = defineType({
   name: 'contact',
-  title: 'Get In Touch Section',
+  title: 'Contact Section',
   type: 'document',
   fields: [
     // Optional heading as it appears on-page
