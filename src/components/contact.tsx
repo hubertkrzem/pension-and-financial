@@ -2,18 +2,7 @@ import Link from "next/link";
 import { client } from "@/sanity/client";
 import { CONTACT_QUERY } from "@/sanity/queries";
 
-type Props = {
-  title?: string;
-  subtitle?: string;
-};
-
-export default async function Contact({
-    title = "Get In Touch",
-    subtitle = "Ready to take control of your financial future? Contact us today.",
-
-    // Set defualt fall backs for contact details, what was there before
-    // 
-}: Props) {
+export default async function Contact() {
     const contact = await client.fetch(CONTACT_QUERY);
 
     return (

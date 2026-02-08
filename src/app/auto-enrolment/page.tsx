@@ -1,17 +1,21 @@
+import { client } from "@/sanity/client";
+import { ARTICLE_PAGE_QUERY } from "@/sanity/queries";
 import Contact from "@/components/contact";
 import Hero from "@/components/hero-text-input";
-import Article from "./_components/article";
+import ArticleContent from "./_components/article";
 
-export default function AutoEnrollment() {
+export default async function AutoEnrollment() {
+  const page = await client.fetch(ARTICLE_PAGE_QUERY);
+
   return (
     <>
-    <Hero
-      title={<>What Is Pension Auto-Enrolment (AE)?</>}
-      subtitle={["The Irish Government's Auto-Enrolment (AE) pension scheme will launch in January 2026. It aims to increase retirement savings by automatically enrolling eligible employees into a workplace pension scheme—unless they choose to opt out"]}
-      className="bg-white"
-    />
-    <Article/>
-    <Contact/>
+      <Hero
+        title={page?.hero?.heading}
+        body={page?.hero?.body}
+        className="bg-white"
+      />
+      {page?.content && <ArticleContent content={page.content} />}
+      <Contact />
     </>
   );
 }

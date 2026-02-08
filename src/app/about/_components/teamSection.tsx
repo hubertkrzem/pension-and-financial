@@ -1,10 +1,15 @@
-// /components/team/TeamSection.tsx
-"use client";
-
+import type { PortableTextBlock } from "@portabletext/react";
 import TeamCard from "@/app/about/_components/teamCard";
-import { TEAM } from "@/app/about/data/team";
 
-export default function TeamSection() {
+type TeamMember = {
+  name: string;
+  role: string;
+  bio: PortableTextBlock[];
+  qualifications: string[];
+  headshot?: { asset?: { url: string }; alt?: string } | null;
+};
+
+export default function TeamSection({ members }: { members: TeamMember[] }) {
   return (
     <section className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-6">
@@ -13,8 +18,8 @@ export default function TeamSection() {
         </h2>
 
         <div className="mt-2 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((m) => (
-            <TeamCard key={m.id} member={m} />
+          {members?.map((m, i) => (
+            <TeamCard key={i} member={m} />
           ))}
         </div>
       </div>

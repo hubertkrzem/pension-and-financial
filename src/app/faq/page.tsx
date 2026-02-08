@@ -1,41 +1,37 @@
+import type { PortableTextBlock } from "@portabletext/react";
+import { client } from "@/sanity/client";
+import { FAQ_PAGE_QUERY } from "@/sanity/queries";
 import Contact from "@/components/contact";
-import Questions from "./_components/contents";
-import Pensions from "./_components/pensions";
-import Investments from "./_components/investment-policies";
-import General from "./_components/general";
 import Hero from "@/components/hero-text-input";
+import FaqContents from "./_components/faq-contents";
+import FaqSection from "./_components/faq-section";
+import Text from "@/components/text";
 
-import Companies from "./_components/companies";
-import Individuals from "./_components/individuals";
-import Section7273 from "./_components/section7273";
-import Text from "@/components/text"
+export default async function Faq() {
+  const page = await client.fetch(FAQ_PAGE_QUERY);
 
-export default function Faq() {
   return (
     <>
-    <Hero
-      title={<>Frequently Asked Questions</>}
-      subtitle={["At Pension & Financial, we understand that financial planning can be complex. Our aim is toprovide clarity and confidence when it comes to protecting your business, your people and your wealth.", "If you have a specific question not answered below, please feel free to contact us directly."]}
-      className="bg-gray-50"
-    />
-    <Questions/>
-    <Pensions/>
-    <Investments/>
-    <Section7273/>
-    <General/>
-
-    <Companies/>
-    <Individuals/>
-
-    <Text
-      title="Need More Help?"
-      subtitle={[
-        "If you have any questions about pensions, investment planning, or inheritance tax solutions, please contact us directly. We are here to provide clear, professional guidance you can trust.",
-        "We aim to make the process simple, transparent, and entirely focused on your success."
-      ]}
-      className="bg-gray-50"
-    />
-    <Contact/>
+      <Hero
+        title={page?.hero?.heading}
+        body={page?.hero?.body}
+        className="bg-gray-50"
+      />
+      {page?.contents && page?.faqs && (
+        <FaqContents data={page.contents} faqs={page.faqs} />
+      )}
+      {page?.faqs?.map((faq: { heading: string; items: { heading: string; body: PortableTextBlock[] }[] }, i: number) => (
+        <FaqSection key={i} data={faq} />
+      ))}
+      {page?.moreInfo && (
+        <Text
+          title={page.moreInfo.heading}
+          subtitle={[]}
+          body={page.moreInfo.body}
+          className="bg-gray-50"
+        />
+      )}
+      <Contact />
     </>
   );
 }

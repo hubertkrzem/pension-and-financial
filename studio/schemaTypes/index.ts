@@ -19,6 +19,7 @@ import { articlePageType } from './pages/articlePageType'
 import { legalPageType } from './pages/legalPageType'
 import { navbarType } from './elements/navbarType'
 import {contactType} from './elements/contactType'
+import {footerType} from './elements/footerType'
 
 export const schemaTypes = [
     // Defined page schemas
@@ -38,6 +39,7 @@ export const schemaTypes = [
     dropDownType,
     navbarType,
     contactType,
+    footerType,
 
     // Legacy code
     home,

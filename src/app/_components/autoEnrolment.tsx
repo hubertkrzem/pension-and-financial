@@ -1,30 +1,37 @@
 import Link from "next/link";
+import { PortableText, PortableTextBlock } from "@portabletext/react";
 
-export default function AutoEnrollment() {
+type Props = {
+  header: string;
+  bubble: {
+    heading: string;
+    body: PortableTextBlock[];
+    link: { linkLabel: string; linkAddress: string };
+  };
+};
+
+export default function AutoEnrolment({ header, bubble }: Props) {
   return (
     <section className="bg-gray-50 pt-6 sm:pt-8 pb-14 sm:pb-16">
       <div className="mx-auto max-w-3xl px-4">
         <h2 className="text-lg font-bold text-slate-900 sm:text-3xl py-4">
-          Featured Article
+          {header}
         </h2>
 
-        {/* Featured article card */}
         <div className="border-1 bg-white rounded rounded-xl p-4 shadow-lg">
           <h2 className="text-2xl text-center font-bold tracking-tight text-slate-900 sm:text-3xl">
-            Auto Enrolment in Ireland
+            {bubble.heading}
           </h2>
 
-        <p className="mt-4 text-slate-600">
-          Auto-enrolment is coming to Ireland, bringing the biggest change to workplace pensions in decades. 
-          Employers will soon be required to automatically enroll eligible employees into a pension scheme, 
-          with both employer and employee contributions.
-        </p>
+          <div className="mt-4 text-slate-600">
+            <PortableText value={bubble.body} />
+          </div>
 
-        <p className="mt-6">
-          <Link href="/auto-enrolment" className="font-semibold text-brand-teal hover:text-brand-navy">
-          Learn more about what auto-enrolment means for you →
-          </Link>
-        </p>
+          <p className="mt-6">
+            <Link href={bubble.link?.linkAddress ?? "#"} className="font-semibold text-brand-teal hover:text-brand-navy">
+              {bubble.link?.linkLabel ?? "Learn more →"}
+            </Link>
+          </p>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity'
 
 export const footerType = defineType({
     name: 'footer',
-    type: 'object',
+    type: 'document',
     title: 'Website Footer',
     description: 'This page defines the information stored in the footer of each page',
     fields: [
