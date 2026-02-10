@@ -11,5 +11,12 @@ export default defineCliConfig({
      * Learn more at https://www.sanity.io/docs/cli#auto-updates
      */
     autoUpdates: true,
-  }
+  },
+  vite: (prev) => ({
+    ...prev,
+    resolve: {
+      ...prev.resolve,
+      dedupe: ['react', 'react-dom', 'react/jsx-runtime', 'styled-components'],
+    },
+  }),
 })
