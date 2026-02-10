@@ -4,5 +4,5 @@ import NavbarClient from "./navbar-client";
 
 export default async function Navbar() {
   const data = await client.fetch(NAVBAR_QUERY);
-  return <NavbarClient data={data} />;
+  return <NavbarClient button={data?.button} />;
 }

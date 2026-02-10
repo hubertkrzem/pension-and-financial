@@ -14,11 +14,6 @@ export const CONTACT_QUERY = `*[_type == "contact"][0]{
 
 export const NAVBAR_QUERY = `*[_type == "navbar"][0]{
   title,
-  items[]{
-    label,
-    link,
-    openInNewTab
-  },
   button {
     label,
     link

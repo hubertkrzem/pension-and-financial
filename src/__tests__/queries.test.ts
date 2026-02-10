@@ -92,8 +92,8 @@ describe("GROQ queries", () => {
     expect(CORPORATE_PAGE_QUERY).toContain("services");
   });
 
-  it("NAVBAR_QUERY fetches items and button", () => {
-    expect(NAVBAR_QUERY).toContain("items");
+  it("NAVBAR_QUERY fetches button", () => {
+    expect(NAVBAR_QUERY).not.toContain("items");
     expect(NAVBAR_QUERY).toContain("button");
   });
 });
