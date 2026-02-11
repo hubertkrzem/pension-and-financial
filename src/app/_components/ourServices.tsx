@@ -14,7 +14,7 @@ type Props = {
 
 export default function OurServices({ heading, box1, box2 }: Props) {
   return (
-    <section className="bg-white py-14 sm:py-16">
+    <section className="py-14 sm:py-16">
       <div className="mx-auto max-w-5xl px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">

@@ -16,7 +16,7 @@ type Props = {
 
 export default function ArticleContent({ content }: Props) {
   return (
-    <section className="bg-gray-50 py-14 sm:py-16">
+    <section className="py-14 sm:py-16">
       <div className="mx-auto max-w-3xl px-4 text-center">
         {content?.map((block, i) => {
           if (block._type === "textTitleSection") {
@@ -28,7 +28,7 @@ export default function ArticleContent({ content }: Props) {
                   </h2>
                 )}
                 {block.body && (
-                  <div className="mt-4 text-slate-600 text-left">
+                  <div className="rich-text mt-4 text-slate-600 text-left">
                     <PortableText value={block.body} />
                   </div>
                 )}
@@ -52,7 +52,7 @@ export default function ArticleContent({ content }: Props) {
 
           if (block._type === "block") {
             return (
-              <div key={i} className="mt-4 text-slate-600 text-left">
+              <div key={i} className="rich-text mt-4 text-slate-600 text-left">
                 <PortableText value={[block]} />
               </div>
             );

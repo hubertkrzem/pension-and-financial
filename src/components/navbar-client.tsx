@@ -107,7 +107,7 @@ export default function NavbarClient({ button }: NavbarClientProps) {
 
           {/* Hamburger (mobile) */}
           <button
-            className="md:hidden inline-flex items-center rounded-md p-2 hover:bg-slate-100"
+            className="md:hidden inline-flex items-center rounded-md p-2 text-slate-600 hover:bg-slate-100"
             aria-label="Open menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -121,7 +121,7 @@ export default function NavbarClient({ button }: NavbarClientProps) {
 
       {/* Mobile panel */}
       <div className={`md:hidden border-t border-slate-200 ${menuOpen ? "block" : "hidden"}`}>
-        <ul className="px-4 py-2 text-slate-800 text-sm font-medium">
+        <ul className="px-4 py-2 text-brand-navy text-sm font-medium">
           <li><Link href="/" className="block py-2" onClick={() => setMenuOpen(false)}>Home</Link></li>
 
           {/* Services submenu (mobile) */}
@@ -132,7 +132,7 @@ export default function NavbarClient({ button }: NavbarClientProps) {
               onClick={() => setSubmenuOpen((v) => !v)}
             >
               <span>Services</span>
-              <svg viewBox="0 0 24 24" className={`h-5 w-5 transition-transform ${submenuOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2">
+              <svg viewBox="0 0 24 24" className={`h-5 w-5 text-slate-600 transition-transform ${submenuOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>

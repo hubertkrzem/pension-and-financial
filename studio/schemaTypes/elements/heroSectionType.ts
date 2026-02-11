@@ -11,6 +11,12 @@ export const heroSectionType = defineType({
         title: 'Hero Heading',
     },
     {
+        name: 'headingLine2',
+        type: 'string',
+        title: 'Hero Heading Line 2',
+        description: 'Optional second line of the heading. Renders on a new line below the main heading.',
+    },
+    {
         name: 'image',
         type: 'image',
         title: 'Hero Image',

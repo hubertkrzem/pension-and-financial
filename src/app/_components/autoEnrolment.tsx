@@ -12,7 +12,7 @@ type Props = {
 
 export default function AutoEnrolment({ header, bubble }: Props) {
   return (
-    <section className="bg-gray-50 pt-6 sm:pt-8 pb-14 sm:pb-16">
+    <section className="pt-6 sm:pt-8 pb-14 sm:pb-16">
       <div className="mx-auto max-w-3xl px-4">
         <h2 className="text-lg font-bold text-slate-900 sm:text-3xl py-4">
           {header}
@@ -23,7 +23,7 @@ export default function AutoEnrolment({ header, bubble }: Props) {
             {bubble.heading}
           </h2>
 
-          <div className="mt-4 text-slate-600">
+          <div className="rich-text mt-4 text-slate-600">
             <PortableText value={bubble.body} />
           </div>
 

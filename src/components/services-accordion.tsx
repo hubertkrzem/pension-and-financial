@@ -17,7 +17,7 @@ export default function ServicesAccordion({ heading, items }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-gray-50 py-12 sm:py-16">
+    <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">
           {heading}
@@ -43,7 +43,7 @@ export default function ServicesAccordion({ heading, items }: Props) {
                 </button>
 
                 {open && (
-                  <div className="pb-6 text-slate-600">
+                  <div className="rich-text pb-6 text-slate-600">
                     <PortableText value={item.body} />
                   </div>
                 )}

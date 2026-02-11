@@ -6,7 +6,7 @@ export default async function Contact() {
     const contact = await client.fetch(CONTACT_QUERY);
 
     return (
-        <section id="contact" className="bg-white py-14 sm:py-16">
+        <section id="contact" className="py-14 sm:py-16">
         {/* Heading + subtext */}
             <div className="mx-auto max-w-3xl px-4 text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">

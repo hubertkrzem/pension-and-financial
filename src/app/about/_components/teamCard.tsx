@@ -33,7 +33,7 @@ export default function TeamCard({ member }: { member: TeamMember }) {
         <p className="text-brand-teal font-medium">{member.role}</p>
 
         {member.bio && member.bio.length > 0 && (
-          <div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-600">
+          <div className="rich-text mt-3 space-y-3 text-sm leading-relaxed text-slate-600">
             <PortableText value={member.bio} />
           </div>
         )}

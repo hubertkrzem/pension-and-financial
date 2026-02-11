@@ -10,7 +10,7 @@ type MissionData = {
 
 export default function Mission({ data }: { data: MissionData }) {
   return (
-    <section className="bg-gray-50 py-14 sm:py-16">
+    <section className="py-14 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 text-slate-600">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">{data.heading}</h2>
@@ -41,7 +41,7 @@ export default function Mission({ data }: { data: MissionData }) {
 
         {/* Body content */}
         {data.body && (
-          <div className="mt-8 text-center max-w-3xl mx-auto">
+          <div className="rich-text mt-8 text-center max-w-3xl mx-auto">
             <PortableText value={data.body} />
           </div>
         )}

@@ -3,11 +3,13 @@ import { render, screen } from "@testing-library/react";
 import { mockFetch } from "./sanity-mock";
 import OurServices from "@/app/_components/ourServices";
 import AutoEnrolment from "@/app/_components/autoEnrolment";
+import HeroTextInput from "@/components/hero-text-input";
 
 const MOCK_HOME = {
   title: "Home Page",
   hero: {
-    heading: "Welcome to Pension & Financial",
+    heading: "Welcome to",
+    headingLine2: "Pension & Financial",
     body: [
       { _type: "block", children: [{ _type: "span", text: "Expert independent financial advice." }] },
     ],
@@ -49,6 +51,57 @@ describe("Home page server component", () => {
     await Home();
     const homeCall = mockFetch.mock.calls.find((c: string[]) => c[0].includes("homePage"));
     expect(homeCall).toBeDefined();
+  });
+});
+
+describe("HeroTextInput component", () => {
+  it("renders two-line heading when headingLine2 is provided", () => {
+    render(
+      <HeroTextInput
+        title="Welcome to"
+        headingLine2="Pension & Financial"
+        body={MOCK_HOME.hero.body}
+      />
+    );
+    const h1 = screen.getByRole("heading", { level: 1 });
+    expect(h1.innerHTML).toContain("Welcome to");
+    expect(h1.innerHTML).toContain("<br>");
+    expect(h1.innerHTML).toContain("Pension &amp; Financial");
+  });
+
+  it("renders single-line heading when headingLine2 is not provided", () => {
+    render(
+      <HeroTextInput
+        title="About Us"
+        body={MOCK_HOME.hero.body}
+      />
+    );
+    expect(screen.getByText("About Us")).toBeInTheDocument();
+  });
+
+  it("renders blockquote content as centered and italic", () => {
+    const quoteBody = [
+      {
+        _type: "block" as const,
+        _key: "q1",
+        style: "blockquote",
+        children: [{ _type: "span" as const, _key: "s1", text: "A wise quote here" }],
+      },
+    ];
+    render(<HeroTextInput title="Test" body={quoteBody} />);
+    const quoteEl = screen.getByText("A wise quote here");
+    expect(quoteEl.closest("[class*='italic']")).not.toBeNull();
+    expect(quoteEl.closest("[class*='text-center']")).not.toBeNull();
+  });
+
+  it("renders normal body text without quote styling", () => {
+    render(
+      <HeroTextInput
+        title="Test"
+        body={MOCK_HOME.hero.body}
+      />
+    );
+    expect(screen.getByText("Expert independent financial advice.")).toBeInTheDocument();
   });
 });
 

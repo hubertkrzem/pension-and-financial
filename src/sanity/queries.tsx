@@ -37,6 +37,7 @@ export const HOME_PAGE_QUERY = `*[_type == "homePage"][0]{
   title,
   hero {
     heading,
+    headingLine2,
     body,
     image {
       asset-> { url },

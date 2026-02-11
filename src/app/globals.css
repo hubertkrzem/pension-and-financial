@@ -34,3 +34,36 @@ html {
   min-height: 100%;
   background: linear-gradient(to bottom, white 50%, #10069F 50%);
 }
+
+strong {
+  color: var(--brand-teal);
+}
+
+.rich-text {
+  line-height: 1.5;
+}
+
+.rich-text p + p {
+  margin-top: 0.75em;
+}
+
+.rich-text ul {
+  list-style: none;
+  padding-left: 0.5;
+}
+
+.rich-text ul li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.rich-text ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  height: 0.35rem;
+  width: 0.35rem;
+  border-radius: 9999px;
+  background-color: var(--brand-teal);
+}

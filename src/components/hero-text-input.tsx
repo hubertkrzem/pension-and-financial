@@ -1,18 +1,28 @@
 import Image from "next/image";
-import { PortableText, type PortableTextBlock } from "@portabletext/react";
+import { PortableText, type PortableTextBlock, type PortableTextComponents } from "@portabletext/react";
 
 type Props = {
   title?: React.ReactNode;
+  headingLine2?: string;
   subtitle?: React.ReactNode[];
   body?: PortableTextBlock[];
   className?: string;
 };
 
+const portableTextComponents: PortableTextComponents = {
+  block: {
+    blockquote: ({ children }) => (
+      <blockquote className="text-center text-balance italic">{children}</blockquote>
+    ),
+  },
+};
+
 export default function HeroTextInput({
   title = "Title",
+  headingLine2,
   subtitle,
   body,
-  className = "bg-gray-50",
+  className = "",
 }: Props) {
   return (
     <section className={`py-14 sm:py-16 ${className}`}>
@@ -36,11 +46,17 @@ export default function HeroTextInput({
           <div className="lg:col-span-6 text-slate-600 md:text-left mx-auto max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-black sm:text-4xl">
               {title}
+              {headingLine2 && (
+                <>
+                  <br />
+                  {headingLine2}
+                </>
+              )}
             </h1>
 
-            <div className="pt-2">
+            <div className="rich-text pt-2">
               {body ? (
-                <PortableText value={body} />
+                <PortableText value={body} components={portableTextComponents} />
               ) : (
                 subtitle?.map((line, index) => (
                   <p className="mt-4" key={index}>{line}</p>

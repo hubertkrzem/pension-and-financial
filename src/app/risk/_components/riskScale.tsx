@@ -48,7 +48,7 @@ export default function RiskScale() {
   };
 
   return (
-    <section className="bg-gray-50 py-12 sm:py-16">
+    <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-3xl px-4">
         {/* Title */}
         <h2 className="text-center text-2xl font-extrabold text-slate-900 sm:text-3xl">

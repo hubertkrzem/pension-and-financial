@@ -4,16 +4,17 @@ import OurServices from "@/app/_components/ourServices";
 import AutoEnrolment from "@/app/_components/autoEnrolment";
 import Hero from "@/components/hero-text-input";
 import Contact from "@/components/contact";
+import AlternatingSections from "@/components/alternating-sections";
 
 export default async function Home() {
   const page = await client.fetch(HOME_PAGE_QUERY);
 
   return (
-    <>
+    <AlternatingSections>
       <Hero
         title={page?.hero?.heading}
+        headingLine2={page?.hero?.headingLine2}
         body={page?.hero?.body}
-        className="bg-gray-50"
       />
       {page?.services && (
         <OurServices
@@ -29,6 +30,6 @@ export default async function Home() {
         />
       )}
       <Contact />
-    </>
+    </AlternatingSections>
   );
 }

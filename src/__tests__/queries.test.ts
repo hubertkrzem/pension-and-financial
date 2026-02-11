@@ -59,8 +59,9 @@ describe("GROQ queries", () => {
   });
 
   // Verify queries fetch key fields that match the schemas
-  it("HOME_PAGE_QUERY fetches hero, services, articleSection", () => {
+  it("HOME_PAGE_QUERY fetches hero with headingLine2, services, articleSection", () => {
     expect(HOME_PAGE_QUERY).toContain("hero");
+    expect(HOME_PAGE_QUERY).toContain("headingLine2");
     expect(HOME_PAGE_QUERY).toContain("services");
     expect(HOME_PAGE_QUERY).toContain("articleSection");
   });

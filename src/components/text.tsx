@@ -11,7 +11,7 @@ export default function Text({
   title = "Title",
   subtitle = ["Subtitle"],
   body,
-  className = "bg-white",
+  className = "",
 }: Props) {
   return (
     <section className={`py-14 sm:py-16 ${className}`}>
@@ -20,7 +20,7 @@ export default function Text({
           {title}
         </h2>
 
-        <div className="mt-4 space-y-2 text-slate-600">
+        <div className="rich-text mt-4 space-y-2 text-slate-600">
           {body ? (
             <PortableText value={body} />
           ) : (
