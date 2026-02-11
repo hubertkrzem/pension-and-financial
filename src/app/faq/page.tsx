@@ -1,5 +1,5 @@
 import type { PortableTextBlock } from "@portabletext/react";
-import { client } from "@/sanity/client";
+import { client, REVALIDATE_TIME } from "@/sanity/client";
 import { FAQ_PAGE_QUERY } from "@/sanity/queries";
 import Contact from "@/components/contact";
 import Hero from "@/components/hero-text-input";
@@ -7,6 +7,8 @@ import FaqContents from "./_components/faq-contents";
 import FaqSection from "./_components/faq-section";
 import Text from "@/components/text";
 import AlternatingSections from "@/components/alternating-sections";
+
+export const revalidate = REVALIDATE_TIME;
 
 export default async function Faq() {
   const page = await client.fetch(FAQ_PAGE_QUERY);

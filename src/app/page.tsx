@@ -1,10 +1,12 @@
-import { client } from "@/sanity/client";
+import { client, REVALIDATE_TIME } from "@/sanity/client";
 import { HOME_PAGE_QUERY } from "@/sanity/queries";
 import OurServices from "@/app/_components/ourServices";
 import FeaturedArticle from "@/app/_components/featuredArticle";
 import Hero from "@/components/hero-text-input";
 import Contact from "@/components/contact";
 import AlternatingSections from "@/components/alternating-sections";
+
+export const revalidate = REVALIDATE_TIME;
 
 export default async function Home() {
   const page = await client.fetch(HOME_PAGE_QUERY);

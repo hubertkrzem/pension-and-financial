@@ -1,9 +1,11 @@
-import { client } from "@/sanity/client";
+import { client, REVALIDATE_TIME } from "@/sanity/client";
 import { CORPORATE_PAGE_QUERY } from "@/sanity/queries";
 import ServicesAccordion from "@/components/services-accordion";
 import Contact from "@/components/contact";
 import Hero from "@/components/hero-text-input";
 import AlternatingSections from "@/components/alternating-sections";
+
+export const revalidate = REVALIDATE_TIME;
 
 export default async function Corporate() {
   const page = await client.fetch(CORPORATE_PAGE_QUERY);
