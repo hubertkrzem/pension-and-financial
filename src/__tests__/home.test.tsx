@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { mockFetch } from "./sanity-mock";
 import OurServices from "@/app/_components/ourServices";
-import AutoEnrolment from "@/app/_components/autoEnrolment";
+import FeaturedArticle from "@/app/_components/featuredArticle";
 import HeroTextInput from "@/components/hero-text-input";
 
 const MOCK_HOME = {
@@ -30,12 +30,13 @@ const MOCK_HOME = {
   },
   articleSection: {
     header: "Featured Article",
-    bubble: {
-      heading: "Auto Enrolment in Ireland",
-      body: [
+    featuredArticle: {
+      featureCardTitle: "Auto Enrolment in Ireland",
+      featureCardBlurb: [
         { _type: "block", children: [{ _type: "span", text: "Auto-enrolment is coming to Ireland." }] },
       ],
-      link: { linkLabel: "Read more →", linkAddress: "/auto-enrolment" },
+      featureCardLinkLabel: "Read more →",
+      slug: { current: "auto-enrolment" },
     },
   },
 };
@@ -142,35 +143,35 @@ describe("OurServices component", () => {
   });
 });
 
-describe("AutoEnrolment component", () => {
+describe("FeaturedArticle component", () => {
   it("renders the section header from Sanity data", () => {
     render(
-      <AutoEnrolment
+      <FeaturedArticle
         header={MOCK_HOME.articleSection.header}
-        bubble={MOCK_HOME.articleSection.bubble}
+        featuredArticle={MOCK_HOME.articleSection.featuredArticle}
       />
     );
     expect(screen.getByText("Featured Article")).toBeInTheDocument();
   });
 
-  it("renders the article heading from Sanity data", () => {
+  it("renders the feature card title from referenced article", () => {
     render(
-      <AutoEnrolment
+      <FeaturedArticle
         header={MOCK_HOME.articleSection.header}
-        bubble={MOCK_HOME.articleSection.bubble}
+        featuredArticle={MOCK_HOME.articleSection.featuredArticle}
       />
     );
     expect(screen.getByText("Auto Enrolment in Ireland")).toBeInTheDocument();
   });
 
-  it("renders the article link from Sanity data", () => {
+  it("renders link with href /articles/{slug} derived from slug field", () => {
     render(
-      <AutoEnrolment
+      <FeaturedArticle
         header={MOCK_HOME.articleSection.header}
-        bubble={MOCK_HOME.articleSection.bubble}
+        featuredArticle={MOCK_HOME.articleSection.featuredArticle}
       />
     );
     const link = screen.getByText("Read more →");
-    expect(link.closest("a")).toHaveAttribute("href", "/auto-enrolment");
+    expect(link.closest("a")).toHaveAttribute("href", "/articles/auto-enrolment");
   });
 });

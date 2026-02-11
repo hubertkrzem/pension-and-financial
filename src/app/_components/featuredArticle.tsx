@@ -3,14 +3,15 @@ import { PortableText, PortableTextBlock } from "@portabletext/react";
 
 type Props = {
   header: string;
-  bubble: {
-    heading: string;
-    body: PortableTextBlock[];
-    link: { linkLabel: string; linkAddress: string };
+  featuredArticle: {
+    featureCardTitle: string;
+    featureCardBlurb: PortableTextBlock[];
+    featureCardLinkLabel: string;
+    slug: { current: string };
   };
 };
 
-export default function AutoEnrolment({ header, bubble }: Props) {
+export default function FeaturedArticle({ header, featuredArticle }: Props) {
   return (
     <section className="pt-6 sm:pt-8 pb-14 sm:pb-16">
       <div className="mx-auto max-w-3xl px-4">
@@ -18,18 +19,21 @@ export default function AutoEnrolment({ header, bubble }: Props) {
           {header}
         </h2>
 
-        <div className="border-1 bg-white rounded rounded-xl p-4 shadow-lg">
+        <div className="bg-white rounded-xl p-4 shadow-lg">
           <h2 className="text-2xl text-center font-bold tracking-tight text-slate-900 sm:text-3xl">
-            {bubble.heading}
+            {featuredArticle.featureCardTitle}
           </h2>
 
           <div className="rich-text mt-4 text-slate-600">
-            <PortableText value={bubble.body} />
+            <PortableText value={featuredArticle.featureCardBlurb} />
           </div>
 
           <p className="mt-6">
-            <Link href={bubble.link?.linkAddress ?? "#"} className="font-semibold text-brand-teal hover:text-brand-navy">
-              {bubble.link?.linkLabel ?? "Learn more →"}
+            <Link
+              href={`/articles/${featuredArticle.slug.current}`}
+              className="font-semibold text-brand-teal hover:text-brand-navy"
+            >
+              {featuredArticle.featureCardLinkLabel}
             </Link>
           </p>
         </div>

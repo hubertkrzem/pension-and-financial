@@ -132,43 +132,11 @@ export const homePageType = defineType({
           title: 'Featured Article Heading',
         },
         defineField({
-            name: 'bubble',
-            type: 'object',
-            title: 'Featured Article Bubble',
-            fields: [
-                {
-                name: 'heading',
-                type: 'string',
-                title: 'Bubble Heading',
-                },
-                defineField({
-                    name: 'body',
-                    type: 'array',
-                    title: 'Body Content',
-                    of: [
-                        {
-                        type: 'block',
-                        },
-                    ],
-                }),
-                defineField({
-                    name: 'link',
-                    type: 'object',
-                    title: 'Article Link',
-                    fields: [
-                        {
-                        name: 'linkLabel',
-                        type: 'string',
-                        title: 'Article Link Label',
-                        },
-                        {
-                        name: 'linkAddress',
-                        type: 'string',
-                        title: 'Article Link Address',
-                        },
-                    ],
-                }),
-            ],
+            name: 'featuredArticle',
+            type: 'reference',
+            title: 'Featured Article',
+            to: [{ type: 'article' }],
+            validation: (rule) => rule.required(),
         }),
         ]
     }),

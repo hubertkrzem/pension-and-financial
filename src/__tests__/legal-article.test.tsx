@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { mockFetch } from "./sanity-mock";
 import Disclaimers from "@/app/legal/_components/disclaimers";
-import ArticleContent from "@/app/auto-enrolment/_components/article";
+import ArticleContent from "@/components/article-content";
 
 const MOCK_LEGAL = {
   heading: "Legal Disclaimers",
@@ -48,20 +48,6 @@ describe("Disclaimers component", () => {
   it("renders disclaimer body from Sanity", () => {
     render(<Disclaimers data={MOCK_LEGAL} />);
     expect(screen.getByText("Regulated by the Central Bank.")).toBeInTheDocument();
-  });
-});
-
-describe("Article page server component", () => {
-  beforeEach(() => {
-    mockFetch.mockReset();
-    mockFetch.mockResolvedValue(MOCK_ARTICLE);
-  });
-
-  it("calls client.fetch with ARTICLE_PAGE_QUERY", async () => {
-    const { default: ArticlePage } = await import("@/app/auto-enrolment/page");
-    await ArticlePage();
-    const call = mockFetch.mock.calls.find((c: string[]) => c[0].includes('"article"'));
-    expect(call).toBeDefined();
   });
 });
 

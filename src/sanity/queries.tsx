@@ -65,13 +65,11 @@ export const HOME_PAGE_QUERY = `*[_type == "homePage"][0]{
   },
   articleSection {
     header,
-    bubble {
-      heading,
-      body,
-      link {
-        linkLabel,
-        linkAddress
-      }
+    featuredArticle-> {
+      featureCardTitle,
+      featureCardBlurb,
+      featureCardLinkLabel,
+      slug
     }
   }
 }`;
@@ -196,8 +194,9 @@ export const CORPORATE_PAGE_QUERY = `*[_type == "corporate"][0]{
   }
 }`;
 
-export const ARTICLE_PAGE_QUERY = `*[_type == "article"][0]{
+export const ARTICLE_BY_SLUG_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   title,
+  slug,
   hero {
     heading,
     body,

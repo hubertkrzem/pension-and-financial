@@ -8,7 +8,7 @@ import {
   FAQ_PAGE_QUERY,
   PERSONAL_PAGE_QUERY,
   CORPORATE_PAGE_QUERY,
-  ARTICLE_PAGE_QUERY,
+  ARTICLE_BY_SLUG_QUERY,
   NAVBAR_QUERY,
   FOOTER_QUERY,
 } from "@/sanity/queries";
@@ -46,8 +46,16 @@ describe("GROQ queries", () => {
     expect(CORPORATE_PAGE_QUERY).toContain('_type == "corporate"');
   });
 
-  it("exports ARTICLE_PAGE_QUERY targeting article type", () => {
-    expect(ARTICLE_PAGE_QUERY).toContain('_type == "article"');
+  it("exports ARTICLE_BY_SLUG_QUERY targeting article type with slug param", () => {
+    expect(ARTICLE_BY_SLUG_QUERY).toContain('_type == "article"');
+    expect(ARTICLE_BY_SLUG_QUERY).toContain("slug.current == $slug");
+  });
+
+  it("ARTICLE_BY_SLUG_QUERY fetches title, hero, content, slug", () => {
+    expect(ARTICLE_BY_SLUG_QUERY).toContain("title");
+    expect(ARTICLE_BY_SLUG_QUERY).toContain("slug");
+    expect(ARTICLE_BY_SLUG_QUERY).toContain("hero");
+    expect(ARTICLE_BY_SLUG_QUERY).toContain("content");
   });
 
   it("exports NAVBAR_QUERY targeting navbar type", () => {
@@ -64,6 +72,14 @@ describe("GROQ queries", () => {
     expect(HOME_PAGE_QUERY).toContain("headingLine2");
     expect(HOME_PAGE_QUERY).toContain("services");
     expect(HOME_PAGE_QUERY).toContain("articleSection");
+  });
+
+  it("HOME_PAGE_QUERY articleSection dereferences featuredArticle with feature card fields", () => {
+    expect(HOME_PAGE_QUERY).toContain("featuredArticle->");
+    expect(HOME_PAGE_QUERY).toContain("featureCardTitle");
+    expect(HOME_PAGE_QUERY).toContain("featureCardBlurb");
+    expect(HOME_PAGE_QUERY).toContain("featureCardLinkLabel");
+    expect(HOME_PAGE_QUERY).toContain("slug");
   });
 
   it("ABOUT_PAGE_QUERY fetches hero, mission, ourTeam, whyUs1", () => {

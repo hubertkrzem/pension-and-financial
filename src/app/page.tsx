@@ -1,7 +1,7 @@
 import { client } from "@/sanity/client";
 import { HOME_PAGE_QUERY } from "@/sanity/queries";
 import OurServices from "@/app/_components/ourServices";
-import AutoEnrolment from "@/app/_components/autoEnrolment";
+import FeaturedArticle from "@/app/_components/featuredArticle";
 import Hero from "@/components/hero-text-input";
 import Contact from "@/components/contact";
 import AlternatingSections from "@/components/alternating-sections";
@@ -23,10 +23,10 @@ export default async function Home() {
           box2={page.services.box2}
         />
       )}
-      {page?.articleSection && (
-        <AutoEnrolment
+      {page?.articleSection?.featuredArticle && (
+        <FeaturedArticle
           header={page.articleSection.header}
-          bubble={page.articleSection.bubble}
+          featuredArticle={page.articleSection.featuredArticle}
         />
       )}
       <Contact />

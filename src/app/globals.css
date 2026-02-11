@@ -17,12 +17,14 @@
   --color-brand-teal: #1165BE;
 }
 
+ /*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+  */
 
 body {
   background: var(--background);
@@ -45,7 +47,55 @@ strong {
 }
 
 .rich-text p + p {
+  margin-top: 0.5em;
+}
+
+.rich-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 2em;
+  color: var(--foreground);
+}
+
+.rich-text h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 1em;
+  color: var(--foreground);
+}
+
+.rich-text h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
   margin-top: 0.75em;
+  color: var(--foreground);
+}
+
+.rich-text h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 0.75em;
+  color: var(--foreground);
+}
+
+.rich-text h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 0.6em;
+  color: var(--foreground);
+}
+
+.rich-text h6 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-top: 0.5em;
+  color: var(--foreground);
 }
 
 .rich-text ul {
@@ -56,15 +106,22 @@ strong {
 .rich-text ul li {
   position: relative;
   padding-left: 1rem;
+  line-height: 1em;
 }
 
 .rich-text ul li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.55rem;
+  top: 0.35rem;
   height: 0.35rem;
   width: 0.35rem;
   border-radius: 9999px;
   background-color: var(--brand-teal);
+}
+
+.rich-text a {
+    color: var(--brand-teal);
+    text-decoration: underline;
+    font-weight: 500;
 }

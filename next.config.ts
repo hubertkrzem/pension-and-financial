@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/auto-enrolment",
+        destination: "/articles/auto-enrolment",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
