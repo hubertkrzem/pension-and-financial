@@ -16,7 +16,7 @@ export default async function Risk() {
         body={page?.hero?.body}
       />
       {page?.riskAppetite && <Intro data={page.riskAppetite} />}
-      <RiskScale />
+      <RiskScale warnings={page?.body} levels={page?.riskLevels} />
       <Contact />
     </AlternatingSections>
   );

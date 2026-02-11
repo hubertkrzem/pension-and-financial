@@ -33,6 +33,7 @@ body {
 html {
   min-height: 100%;
   background: linear-gradient(to bottom, white 50%, #10069F 50%);
+  scroll-behavior: smooth;
 }
 
 strong {
@@ -49,7 +50,7 @@ strong {
 
 .rich-text ul {
   list-style: none;
-  padding-left: 0.5;
+  padding-left: 0.5rem;
 }
 
 .rich-text ul li {

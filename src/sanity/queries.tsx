@@ -123,6 +123,11 @@ export const RISK_PAGE_QUERY = `*[_type == "riskPage"][0]{
     heading,
     body
   },
+  riskLevels[] {
+    name,
+    description,
+    profile
+  },
   body
 }`;
 

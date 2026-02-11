@@ -21,24 +21,31 @@ type Props = {
 export default function FaqContents({ data, faqs }: Props) {
   return (
     <section className="py-14 sm:py-16">
-      <div className="mx-auto max-w-3xl px-4">
+      <div className="mx-auto max-w-5xl px-4">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             {data.heading}
           </h2>
         </div>
 
-        <div className="text-slate-600 font-semibold mt-4">
-          <ul className="list-disc list-inside underline">
-            {faqs?.map((faq, i) => {
-              const sectionId = faq.heading?.toLowerCase().replace(/\s+/g, "-");
-              return (
-                <li key={i}>
-                  <a href={`#${sectionId}`}>{faq.heading}</a>
-                </li>
-              );
-            })}
-          </ul>
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {faqs?.map((faq, i) => {
+            const sectionId = faq.heading?.toLowerCase().replace(/\s+/g, "-");
+            return (
+              <a
+                key={i}
+                href={`#${sectionId}`}
+                className="group flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3 shadow-sm transition-all hover:border-brand-teal/40 hover:shadow-md"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-brand-teal/10 text-xs font-bold text-brand-teal">
+                  {i + 1}
+                </span>
+                <p className="text-sm font-semibold text-slate-900 group-hover:text-brand-teal transition-colors">
+                  {faq.heading}
+                </p>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

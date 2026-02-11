@@ -80,9 +80,10 @@ describe("GROQ queries", () => {
     expect(FAQ_PAGE_QUERY).toContain("moreInfo");
   });
 
-  it("RISK_PAGE_QUERY fetches hero, riskAppetite, body", () => {
+  it("RISK_PAGE_QUERY fetches hero, riskAppetite, riskLevels, body", () => {
     expect(RISK_PAGE_QUERY).toContain("hero");
     expect(RISK_PAGE_QUERY).toContain("riskAppetite");
+    expect(RISK_PAGE_QUERY).toContain("riskLevels");
     expect(RISK_PAGE_QUERY).toContain("body");
   });
 

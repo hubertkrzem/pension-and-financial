@@ -2,12 +2,24 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { PortableText, type PortableTextBlock } from "@portabletext/react";
 
 type RiskItem = {
   level: number;
   name: string;           // e.g., "Low risk"
   blurb: string;          // short description
   profile: string;        // investor profile
+};
+
+type SanityLevel = {
+  name: string;
+  description: string;
+  profile: string;
+};
+
+type Props = {
+  warnings?: PortableTextBlock[];
+  levels?: SanityLevel[];
 };
 
 const DATA: RiskItem[] = [
@@ -31,9 +43,16 @@ const levelColors = [
   "bg-[#10069F]",
 ];
 
-export default function RiskScale() {
+export default function RiskScale({ warnings, levels }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const items: RiskItem[] = DATA.map((fallback, i) => {
+    const s = levels?.[i];
+    return s
+      ? { level: i + 1, name: s.name, blurb: s.description, profile: s.profile }
+      : fallback;
+  });
 
   const handleSelect = (idx: number) => {
     setSelected(idx);
@@ -59,7 +78,7 @@ export default function RiskScale() {
         <div className="mt-6 flex items-center justify-center gap-3 text-sm text-slate-500">
           <span className="hidden sm:inline">Low risk</span>
           <div className="flex items-center gap-2">
-            {DATA.map((item, i) => {
+            {items.map((item, i) => {
               const active = selected === i;
               return (
                 <button
@@ -94,7 +113,7 @@ export default function RiskScale() {
 
         {/* Cards */}
         <div className="mt-8 space-y-4">
-          {DATA.map((item, i) => {
+          {items.map((item, i) => {
             const active = selected === i;
             return (
               <div
@@ -143,12 +162,18 @@ export default function RiskScale() {
 
         {/* Notices */}
         <div className="text-slate-600 pt-12 text-center">
-          <ul className="list-disc space-y-1 pl-5 marker:text-brand-teal inline-block text-left">
-            <li>The value of your investment may go down as well as up.</li>
-            <li>You may get back less than you invest.</li>
-            <li>Past performance is not a reliable guide to future performance.</li>
-            <li>Investments may be affected by changes in currency exchange rates.</li>
-          </ul>
+          {warnings ? (
+            <div className="rich-text inline-block text-left">
+              <PortableText value={warnings} />
+            </div>
+          ) : (
+            <ul className="list-disc space-y-1 pl-5 marker:text-brand-teal inline-block text-left">
+              <li>The value of your investment may go down as well as up.</li>
+              <li>You may get back less than you invest.</li>
+              <li>Past performance is not a reliable guide to future performance.</li>
+              <li>Investments may be affected by changes in currency exchange rates.</li>
+            </ul>
+          )}
         </div>
       </div>
     </section>

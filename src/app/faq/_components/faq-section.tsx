@@ -21,7 +21,7 @@ export default function FaqSection({ data }: Props) {
   const sectionId = data.heading?.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <section id={sectionId} className="py-12 sm:py-16">
+    <section id={sectionId} className="scroll-mt-[20vh] py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-center text-3xl font-extrabold text-slate-900 sm:text-4xl">
           {data.heading}
