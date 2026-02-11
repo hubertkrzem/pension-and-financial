@@ -1,11 +1,8 @@
-import {home} from './home'
-import {featuredArticle} from './sections/featuredArticle'
-import {page} from './page'
-import heroSection from './sections/heroSection'
-
-
 import {homePageType} from './pages/homePageType'
 import {aboutPageType} from './pages/aboutPageType'
+
+import {featuredArticle} from './sections/featuredArticle'
+import heroSection from './sections/heroSection'
 
 import {heroSectionType} from './elements/heroSectionType'
 import {employeeCardType} from './elements/employeeCardType'
@@ -42,9 +39,7 @@ export const schemaTypes = [
     footerType,
 
     // Legacy code
-    home,
     featuredArticle,
     heroSection,
-    page,
     
 ]
