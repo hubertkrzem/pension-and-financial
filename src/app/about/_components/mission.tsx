@@ -23,9 +23,9 @@ export default function Mission({ data }: { data: MissionData }) {
             {data.quotes.map((quote, i) => (
               <figure key={i} className="relative">
                 <blockquote className="text-2xl sm:text-3xl font-semibold leading-relaxed text-slate-800 pl-8">
-                  <span className="absolute left-0 top-0 text-brand-teal text-6xl align-top leading-none select-none">&ldquo;</span>
+                  <span aria-hidden="true" className="absolute left-0 top-0 text-brand-teal text-6xl align-top leading-none select-none">&ldquo;</span>
                   {quote}
-                  <span className="absolute text-brand-teal text-6xl align-bottom leading-none select-none">&rdquo;</span>
+                  <span aria-hidden="true" className="absolute text-brand-teal text-6xl align-bottom leading-none select-none">&rdquo;</span>
                 </blockquote>
               </figure>
             ))}

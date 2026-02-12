@@ -25,7 +25,6 @@ export default async function Footer() {
                 alt="Pension & Financial"
                 width={100} height={100}
                 className="md:w-[100px] md:h-[100px]"
-                priority
               />
             </Link>
 

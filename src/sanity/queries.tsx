@@ -214,6 +214,13 @@ export const ARTICLE_BY_SLUG_QUERY = `*[_type == "article" && slug.current == $s
   }
 }`;
 
+export const ARTICLE_METADATA_QUERY = `*[_type == "article" && slug.current == $slug][0]{
+  title,
+  hero {
+    heading
+  }
+}`;
+
 export const LEGAL_QUERY = `*[_type == "legal"][0]{
   heading,
   content[] {

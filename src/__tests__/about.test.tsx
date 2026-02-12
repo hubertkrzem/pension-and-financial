@@ -66,6 +66,12 @@ describe("Mission component", () => {
     expect(screen.getByText("Help you grow your assets.")).toBeInTheDocument();
   });
 
+  it("marks decorative quote marks as aria-hidden", () => {
+    const { container } = render(<Mission data={MOCK_ABOUT.mission} />);
+    const quoteSpans = container.querySelectorAll("span[aria-hidden='true']");
+    expect(quoteSpans.length).toBeGreaterThanOrEqual(2);
+  });
+
   it("renders author attribution from Sanity", () => {
     render(<Mission data={MOCK_ABOUT.mission} />);
     expect(screen.getByText(/John Clare, Director/)).toBeInTheDocument();

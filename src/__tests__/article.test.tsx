@@ -33,6 +33,26 @@ describe("Dynamic article page server component", () => {
   });
 });
 
+describe("Article generateMetadata", () => {
+  beforeEach(() => {
+    mockFetch.mockReset();
+  });
+
+  it("returns article title as metadata title", async () => {
+    mockFetch.mockResolvedValue({ title: "Auto Enrolment", hero: { heading: "What Is Pension Auto-Enrolment?" } });
+    const { generateMetadata } = await import("@/app/articles/[slug]/page");
+    const metadata = await generateMetadata({ params: Promise.resolve({ slug: "auto-enrolment" }) });
+    expect(metadata.title).toBe("Auto Enrolment");
+  });
+
+  it("returns fallback metadata when article is not found", async () => {
+    mockFetch.mockResolvedValue(null);
+    const { generateMetadata } = await import("@/app/articles/[slug]/page");
+    const metadata = await generateMetadata({ params: Promise.resolve({ slug: "nonexistent" }) });
+    expect(metadata.title).toBe("Article not found");
+  });
+});
+
 describe("ArticleContent component", () => {
   it("renders article section headings from Sanity", () => {
     render(<ArticleContent content={MOCK_ARTICLE.content} />);
