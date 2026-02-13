@@ -7,5 +7,4 @@ vi.mock("@/sanity/client", () => ({
   client: {
     fetch: (...args: unknown[]) => mockFetch(...args),
   },
-  REVALIDATE_TIME: 3600,
 }));

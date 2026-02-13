@@ -12,6 +12,6 @@ export function FixedArrayInput(props: ArrayOfObjectsInputProps) {
 export function FixedItemInput(props: ObjectItemProps) {
   return props.renderDefault({
     ...props,
-    actions: undefined,
+    onRemove: () => {},
   })
 }

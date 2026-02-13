@@ -1,9 +1,9 @@
-import { client, REVALIDATE_TIME } from "@/sanity/client";
+import { client } from "@/sanity/client";
 import { LEGAL_QUERY } from "@/sanity/queries";
 import Disclaimers from "./_components/disclaimers";
 import AlternatingSections from "@/components/alternating-sections";
 
-export const revalidate = REVALIDATE_TIME;
+export const revalidate = 3600;
 
 export default async function Legal() {
   const page = await client.fetch(LEGAL_QUERY);

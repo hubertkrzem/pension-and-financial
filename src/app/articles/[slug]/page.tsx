@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { client, REVALIDATE_TIME } from "@/sanity/client";
+import { client } from "@/sanity/client";
 import { ARTICLE_BY_SLUG_QUERY, ARTICLE_METADATA_QUERY } from "@/sanity/queries";
 import Hero from "@/components/hero-text-input";
 import ArticleContent from "@/components/article-content";
 import Contact from "@/components/contact";
 import AlternatingSections from "@/components/alternating-sections";
 
-export const revalidate = REVALIDATE_TIME;
+export const revalidate = 3600;
 
 type ArticleParams = { params: Promise<{ slug: string }> };
 
