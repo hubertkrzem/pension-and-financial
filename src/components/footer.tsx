@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PortableText, type PortableTextBlock } from "@portabletext/react";
 import { client } from "@/sanity/client";
 import { FOOTER_QUERY } from "@/sanity/queries";
 
@@ -7,13 +8,11 @@ export default async function Footer() {
   const footer = await client.fetch(FOOTER_QUERY);
   const year = new Date().getFullYear();
 
-  // Build URLs with fallbacks to the current static paths
   const privacyUrl = footer?.privacyPolicy?.asset?.url ?? "documents/privacy-policy.pdf";
   const termsUrl = footer?.termsOfService?.asset?.url ?? "documents/terms-of-business.pdf";
-  const legalUrl = footer?.legalDisclaimers ?? "/legal";
 
   return (
-    <footer className="border-t bg-white/90">
+    <footer className="bg-gray-200">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8">
         <div className="grid gap-6 md:grid-cols-2 md:items-start md:gap-8">
 
@@ -28,13 +27,11 @@ export default async function Footer() {
               />
             </Link>
 
+            {/* Regulatory Disclosures from Sanity */}
             <div className="text-xs sm:text-sm leading-snug text-slate-600">
-              <p>
-                John Clare &amp; Associates Ltd, trading as Pension &amp; Financial,
-                is regulated by the Central Bank of Ireland.
-              </p>
-              <p>Central Bank Registered No. CB2468 · Company No. 323124</p>
-              <p>Registered Address: 89 Eagle Valley, Enniskerry, Dublin 18</p>
+              {footer?.regulatoryDisclosures && (
+                <PortableText value={footer.regulatoryDisclosures as PortableTextBlock[]} />
+              )}
               <p>&copy; {year} Pension &amp; Financial. All rights reserved.</p>
             </div>
           </div>
@@ -52,7 +49,7 @@ export default async function Footer() {
               </Link>
             </li>
             <li>
-              <Link href={legalUrl} className="block py-2 hover:text-blue-700">
+              <Link href="/legal" className="block py-2 hover:text-blue-700">
                 Legal Disclaimers
               </Link>
             </li>

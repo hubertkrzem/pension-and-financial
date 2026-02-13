@@ -17,16 +17,11 @@ export const faqPageType = defineType({
         title: 'Hero Section'
     }),
 
-    {
-        name: 'contents',
-        type: 'textTitleSection',
-        title: 'Title Text Section for Contents'
-    },
-
     defineField({
         name: 'faqs',
         type: 'array',
         title: 'List of Dropdown Menus',
+        description: 'Section for adding new FAQ categories, page contents will update accordingly',
         of: [
             {
                 name: 'faqs',

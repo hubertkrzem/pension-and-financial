@@ -223,8 +223,5 @@ export const ARTICLE_METADATA_QUERY = `*[_type == "article" && slug.current == $
 
 export const LEGAL_QUERY = `*[_type == "legal"][0]{
   heading,
-  content[] {
-    heading,
-    body
-  }
+  content
 }`;

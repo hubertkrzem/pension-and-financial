@@ -65,7 +65,9 @@ export default async function Contact() {
                     <h3 className="text-lg font-semibold text-slate-900">Office</h3>
 
                     <p className="mt-3 text-slate-600">
-                        {contact.officeAddress[0]}<br/>{contact.officeAddress[1]}
+                        {contact.officeAddress?.map((line: string, i: number) => (
+                            <span key={i}>{i > 0 && <br/>}{line}</span>
+                        ))}
                     </p>
                 </div>
             </div>

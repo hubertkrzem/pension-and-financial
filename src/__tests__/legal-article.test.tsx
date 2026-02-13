@@ -7,8 +7,10 @@ import ArticleContent from "@/components/article-content";
 const MOCK_LEGAL = {
   heading: "Legal Disclaimers",
   content: [
-    { heading: "Regulatory Disclosure", body: [{ _type: "block", children: [{ _type: "span", text: "Regulated by the Central Bank." }] }] },
-    { heading: "Tax Disclaimer", body: [{ _type: "block", children: [{ _type: "span", text: "Tax treatment depends on circumstances." }] }] },
+    { _type: "block", _key: "a", style: "normal", children: [{ _type: "span", _key: "a1", text: "Regulatory Disclosure", marks: [] }], markDefs: [] },
+    { _type: "block", _key: "b", style: "normal", children: [{ _type: "span", _key: "b1", text: "Regulated by the Central Bank.", marks: [] }], markDefs: [] },
+    { _type: "block", _key: "c", style: "normal", children: [{ _type: "span", _key: "c1", text: "Tax Disclaimer", marks: [] }], markDefs: [] },
+    { _type: "block", _key: "d", style: "normal", children: [{ _type: "span", _key: "d1", text: "Tax treatment depends on circumstances.", marks: [] }], markDefs: [] },
   ],
 };
 

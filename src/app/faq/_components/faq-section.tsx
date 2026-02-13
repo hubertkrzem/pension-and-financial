@@ -19,7 +19,7 @@ type Props = {
 export default function FaqSection({ data }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const sectionId = data.heading?.toLowerCase().replace(/\s+/g, "-");
+  const sectionId = data.heading?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
   return (
     <section id={sectionId} className="scroll-mt-[20vh] py-12 sm:py-16">

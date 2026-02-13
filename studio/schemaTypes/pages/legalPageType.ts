@@ -19,11 +19,7 @@ export const legalPageType = defineType({
         name: 'content',
         type: 'array',
         title: 'Legal Disclosures Content',
-        of: [ 
-            // Three types of content, Text + Heading, Image, Text
-            { type: 'textTitleSection'},
-            { type: 'block'},
-            ],
+        of: [{ type: 'block' }],
         }),
     ],
 })

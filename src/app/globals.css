@@ -101,19 +101,21 @@ strong {
 .rich-text ul {
   list-style: none;
   padding-left: 0.5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .rich-text ul li {
   position: relative;
   padding-left: 1rem;
-  line-height: 1em;
+  line-height: 2em;
 }
 
 .rich-text ul li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.35rem;
+  top: 0.825em;
   height: 0.35rem;
   width: 0.35rem;
   border-radius: 9999px;

@@ -7,7 +7,7 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   return (
-    <section className="flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
+    <section className="flex flex-1 flex-col items-center justify-center px-4 text-center">
       <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">
         Something went wrong
       </h1>

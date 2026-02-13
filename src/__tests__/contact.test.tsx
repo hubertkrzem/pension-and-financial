@@ -47,4 +47,31 @@ describe("Contact component", () => {
     expect(screen.getByText(/89 Eagle Valley/)).toBeInTheDocument();
     expect(screen.getByText(/Enniskerry, Dublin 18/)).toBeInTheDocument();
   });
+
+  it("renders without crashing when officeAddress is empty", async () => {
+    mockFetch.mockResolvedValue({ ...MOCK_CONTACT, officeAddress: [] });
+    const html = await Contact();
+    const { container } = render(html);
+    expect(container).toBeTruthy();
+    expect(screen.getByText("Office")).toBeInTheDocument();
+  });
+
+  it("renders a single address line", async () => {
+    mockFetch.mockResolvedValue({ ...MOCK_CONTACT, officeAddress: ["One Line"] });
+    const html = await Contact();
+    render(html);
+    expect(screen.getByText("One Line")).toBeInTheDocument();
+  });
+
+  it("renders 3+ address lines", async () => {
+    mockFetch.mockResolvedValue({
+      ...MOCK_CONTACT,
+      officeAddress: ["Line 1", "Line 2", "Line 3"],
+    });
+    const html = await Contact();
+    render(html);
+    expect(screen.getByText("Line 1")).toBeInTheDocument();
+    expect(screen.getByText("Line 2")).toBeInTheDocument();
+    expect(screen.getByText("Line 3")).toBeInTheDocument();
+  });
 });

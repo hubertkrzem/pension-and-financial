@@ -30,7 +30,7 @@ export default function FaqContents({ data, faqs }: Props) {
 
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {faqs?.map((faq, i) => {
-            const sectionId = faq.heading?.toLowerCase().replace(/\s+/g, "-");
+            const sectionId = faq.heading?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
             return (
               <a
                 key={i}

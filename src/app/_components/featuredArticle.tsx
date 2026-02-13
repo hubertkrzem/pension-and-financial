@@ -24,18 +24,22 @@ export default function FeaturedArticle({ header, featuredArticle }: Props) {
             {featuredArticle.featureCardTitle}
           </h2>
 
-          <div className="rich-text mt-4 text-slate-600">
-            <PortableText value={featuredArticle.featureCardBlurb} />
-          </div>
+          {featuredArticle.featureCardBlurb && (
+            <div className="rich-text mt-4 text-slate-600">
+              <PortableText value={featuredArticle.featureCardBlurb} />
+            </div>
+          )}
 
-          <p className="mt-6">
-            <Link
-              href={`/articles/${featuredArticle.slug.current}`}
-              className="font-semibold text-brand-teal hover:text-brand-navy"
-            >
-              {featuredArticle.featureCardLinkLabel}
-            </Link>
-          </p>
+          {featuredArticle.slug?.current && (
+            <p className="mt-6">
+              <Link
+                href={`/articles/${featuredArticle.slug.current}`}
+                className="font-semibold text-brand-teal hover:text-brand-navy"
+              >
+                {featuredArticle.featureCardLinkLabel}
+              </Link>
+            </p>
+          )}
         </div>
       </div>
     </section>
