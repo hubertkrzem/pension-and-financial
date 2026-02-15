@@ -1,21 +1,28 @@
-import Services from "@/app/services/personal/_components/services";
+import { client } from "@/sanity/client";
+import { PERSONAL_PAGE_QUERY } from "@/sanity/queries";
+import ServicesAccordion from "@/components/services-accordion";
 import Contact from "@/components/contact";
 import Hero from "@/components/hero-text-input";
-import Intro from "@/components/intro"
+import AlternatingSections from "@/components/alternating-sections";
 
-export default function Personal() {
+export const revalidate = 3600;
+
+export default async function Personal() {
+  const page = await client.fetch(PERSONAL_PAGE_QUERY);
+
   return (
-    <>
-    <Hero
-      title={<>Personal Wealth Management & Financial Planning</>}
-      subtitle={[
-        <>Tailored Wealth Solutions for High Net Worth Clients</>,
-        <>We provide expert, discreet financial planning and <span className="font-bold text-brand-teal">Wealth Management</span> services for high net worth individuals and families. From strategic investment planning to tax-efficient estate planning, our aim is to protect and grow your assets for you and your generations to come.</>
-      ]}
-      className="bg-white"
-    />
-    <Services/>
-    <Contact/>
-    </>
+    <AlternatingSections>
+      <Hero
+        title={page?.hero?.heading}
+        body={page?.hero?.body}
+      />
+      {page?.services && (
+        <ServicesAccordion
+          heading={page.services.heading}
+          items={page.services.items}
+        />
+      )}
+      <Contact />
+    </AlternatingSections>
   );
 }

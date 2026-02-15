@@ -1,6 +1,6 @@
 export default function Intro() {
   return (
-    <section className="bg-gray-50 py-14 sm:py-16">
+    <section className="py-14 sm:py-16">
       <div className="mx-auto max-w-3xl px-4 text-left text-slate-600">
 
         <h1 className="text-4xl md:text-5xl font-bold text-black text-center sm:text-4xl">

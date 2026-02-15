@@ -1,21 +1,28 @@
-import Services from "@/app/services/corporate/_components/services";
+import { client } from "@/sanity/client";
+import { CORPORATE_PAGE_QUERY } from "@/sanity/queries";
+import ServicesAccordion from "@/components/services-accordion";
 import Contact from "@/components/contact";
 import Hero from "@/components/hero-text-input";
+import AlternatingSections from "@/components/alternating-sections";
 
-export default function Corporate() {
+export const revalidate = 3600;
+
+export default async function Corporate() {
+  const page = await client.fetch(CORPORATE_PAGE_QUERY);
+
   return (
-    <>
+    <AlternatingSections>
       <Hero
-        title={<>Company Financial Services</>}
-        subtitle={[
-          <>Professional Financial Planning for Irish Businesses</>,
-          <>We offer <span className="font-bold text-brand-teal">trusted</span>, strategic support to companies across Ireland. Our tailored services help employers manage their obligations, grow financial assets, and offer valuable <span className="font-bold text-brand-teal">employee benefits</span> through pensions and protection.</>,
-          <>Our goal is to deliver <span className="font-bold text-brand-teal">professional</span>, <span className="font-bold text-brand-teal">impartial</span> advice that strengthens your business, supports your team, and builds long-term financial stability, leading to strong staff retention.</>
-        ]}
-        className="bg-white"
+        title={page?.hero?.heading}
+        body={page?.hero?.body}
+      />
+      {page?.services && (
+        <ServicesAccordion
+          heading={page.services.heading}
+          items={page.services.items}
         />
-      <Services/>
-      <Contact/>
-    </>
+      )}
+      <Contact />
+    </AlternatingSections>
   );
 }

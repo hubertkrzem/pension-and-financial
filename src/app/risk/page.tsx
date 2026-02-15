@@ -1,19 +1,25 @@
+import { client } from "@/sanity/client";
+import { RISK_PAGE_QUERY } from "@/sanity/queries";
 import Contact from "@/components/contact";
 import Intro from "@/app/risk/_components/intro";
 import RiskScale from "@/app/risk/_components/riskScale";
 import Hero from "@/components/hero-text-input";
+import AlternatingSections from "@/components/alternating-sections";
 
-export default function Risk() {
+export const revalidate = 3600;
+
+export default async function Risk() {
+  const page = await client.fetch(RISK_PAGE_QUERY);
+
   return (
-    <>
-    <Hero
-      title={<>Understanding Investment Risk</>}
-      subtitle={["All investments carry some level of risk, which simply means the value of your money can go up or down. Your risk appetite is how comfortable you are with this — whether you prefer lower-risk options that aim for steady but smaller returns, or higher-risk choices that may bring bigger rewards but also bigger ups and downs.", "Finding the right balance is key to building an investment plan that suits you."]}
-      className="bg-gray-50"
-    />
-    <Intro/>
-    <RiskScale/>
-    <Contact/>
-    </>
+    <AlternatingSections>
+      <Hero
+        title={page?.hero?.heading}
+        body={page?.hero?.body}
+      />
+      {page?.riskAppetite && <Intro data={page.riskAppetite} />}
+      <RiskScale warnings={page?.body} levels={page?.riskLevels} />
+      <Contact />
+    </AlternatingSections>
   );
 }

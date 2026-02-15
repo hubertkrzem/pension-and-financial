@@ -1,23 +1,27 @@
-
+import { client } from "@/sanity/client";
+import { ABOUT_PAGE_QUERY } from "@/sanity/queries";
 import Mission from "@/app/about/_components/mission";
-import TeamSection from "@/app/about/_components/teamSection"
-import WhyChooseUs from "@/app/about/_components/whyChooseUs"
+import TeamSection from "@/app/about/_components/teamSection";
+import WhyChooseUs from "@/app/about/_components/whyChooseUs";
 import Contact from "@/components/contact";
 import Hero from "@/components/hero-text-input";
+import AlternatingSections from "@/components/alternating-sections";
 
-export default function About() {
+export const revalidate = 3600;
+
+export default async function About() {
+  const page = await client.fetch(ABOUT_PAGE_QUERY);
+
   return (
-    <>
+    <AlternatingSections>
       <Hero
-        title={<>About us</>}
-        subtitle={["Founded in 1992 by John Clare, a seasoned financial advisor with over 30 years of experience in pensions and financial services.",
-                    "Our firm is built on trust, professionalism, and a commitment to long-term client success."]}
-        className="bg-white"
+        title={page?.hero?.heading}
+        body={page?.hero?.body}
       />
-      <Mission/>
-      <TeamSection/>
-      <WhyChooseUs/>
-      <Contact/>
-    </>
+      {page?.mission && <Mission data={page.mission} />}
+      {page?.ourTeam && <TeamSection members={page.ourTeam} />}
+      {page?.whyUs1 && <WhyChooseUs data={page.whyUs1} />}
+      <Contact />
+    </AlternatingSections>
   );
 }
